@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/kanda/Scenes/Battle.unity
+    guid: 6b982ff6e70d094489d7dd7b2b2b26ce
   m_configObjects: {}
