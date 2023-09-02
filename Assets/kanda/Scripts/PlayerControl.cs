@@ -29,9 +29,11 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         //自動で全進しています
+        /*
         transform.position += transform.TransformDirection
         (Vector3.forward * Speed);
         transform.rotation = Quaternion.Euler(0, 0, 0);
+        */
 
         // 上矢印キーが押されたときの処理
         if (Input.GetKey(KeyCode.UpArrow)){
