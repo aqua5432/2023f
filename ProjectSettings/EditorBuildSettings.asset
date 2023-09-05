@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/fujiwara/Scenes/Home.unity
+    guid: d1f2874904232d841bcb01c105a537a9
+  - enabled: 1
+    path: Assets/fujiwara/Scenes/Option.unity
+    guid: 5b26bea1f66db8749a512099e907e475
+  - enabled: 1
+    path: Assets/fujiwara/Scenes/Mission.unity
+    guid: 915cc13f1c9fb5a46a5b85f0bd12db8d
+  - enabled: 1
+    path: Assets/fujiwara/Scenes/Title.unity
+    guid: 3b3c0671ee8347043a6e250b3927a7c5
+  - enabled: 1
+    path: Assets/fujiwara/Scenes/Quest.unity
+    guid: e020dff90aa786b48829f033e2b3e312
   m_configObjects: {}
