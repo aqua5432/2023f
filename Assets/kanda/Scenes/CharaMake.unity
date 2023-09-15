@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 1_Body
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2b5c0c841e8808a47a207d609509825c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -535,6 +539,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 77a3216b1b724834981b793c6d66bd28, type: 3}
       propertyPath: m_Name
       value: 1_Thruster
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 77a3216b1b724834981b793c6d66bd28, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

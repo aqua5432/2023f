@@ -7,6 +7,7 @@ TagManager:
   - RoutePoint
   - Enemy
   - Bullet
+  - SubCamera
   layers:
   - Default
   - TransparentFX
