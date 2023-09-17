@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,14 +6,53 @@ using UnityEngine;
 [CreateAssetMenu]
 public class EquipmentDatabaseSO : ScriptableObject
 {
-    public List<EquipmentData> equipmentDatas = new List<EquipmentData>();
+    public List<EquipmentData> equipmentDatabase = new List<EquipmentData>();
 }
 
 [System.Serializable]
 public class EquipmentData
 {
-    public string part;
-    public int attack;
-    public int hp;
-    public int speed;
+    [SerializeField] int attack;
+    [SerializeField] int deffence;
+    [SerializeField] int hp;
+    [SerializeField] int speed;
+    [SerializeField] int critRate;
+
+    public enum states
+    {
+        attack,
+        deffence,
+        hp,
+        speed,
+        critRate
+    }
+
+    public int[] GetStates()
+    {
+        var states = new int[]
+        {
+            attack,
+            deffence,
+            hp,
+            speed,
+            critRate,
+
+        };
+        return states;
+    }
+
+    public int GetAttack()
+    {
+        return attack;
+    }
+
+    public int GetHp()
+    {
+        return hp;
+    }
+
+    public int GetSpeed()
+    {
+        return speed;
+    }
 }

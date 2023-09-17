@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/kodaka/Scenes/Shop.unity
     guid: 6ef0b3341a811c34a8401512f7970b9e
+  - enabled: 1
+    path: Assets/kodaka/Scenes/Menu.unity
+    guid: 4bd13b6d5882c5449878cf17f0e235f8
   m_configObjects: {}

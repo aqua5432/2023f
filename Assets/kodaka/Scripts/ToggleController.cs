@@ -1,21 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ToggleController : MonoBehaviour
 {
-    GameObject equipmentChanger;
-    public EquipmentChanger equipmentChange;
+    public StatesManager statesManager;
+    public EquipmentChanger equipmentChanger;
+    public TotalStatesDisplayer totalStatesDisplayer;
 
-    public void CallChangeEquipment()
+
+    public void OnClickToggle(int partsNumber)
     {
-        equipmentChanger = GameObject.Find("FighterView");
-
-
-        int toggleIndex = transform.GetSiblingIndex();
-        int groupIndex = transform.parent.parent.GetSiblingIndex();
-
-        equipmentChanger.GetComponent<EquipmentChanger>().ChangeEquipment(groupIndex, toggleIndex);
+        int fighterNumber = transform.GetSiblingIndex();
+        statesManager.SetCurrentEquipment(partsNumber, fighterNumber);
+        equipmentChanger.ChangeEquipment(partsNumber, fighterNumber);
+        totalStatesDisplayer.DisplayTotalStates();
     }
 }
     

@@ -10,10 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de00973f7a86756499018a7df57fb147, type: 3}
-  m_Name: EquipmentDatabaseSO
+  m_Name: ThrusterDatabase
   m_EditorClassIdentifier: 
-  equipmentDatas:
-  - part: 
-    attack: 0
+  equipmentDatabase:
+  - attack: 3
+    hp: 3
+    speed: 3
+  - attack: 0
+    hp: 0
+    speed: 0
+  - attack: 0
+    hp: 0
+    speed: 0
+  - attack: 0
+    hp: 0
+    speed: 0
+  - attack: 0
+    hp: 0
+    speed: 0
+  - attack: 0
+    hp: 0
+    speed: 0
+  - attack: 0
     hp: 0
     speed: 0
