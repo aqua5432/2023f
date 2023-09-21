@@ -29,6 +29,8 @@ public class PlayerControl : MonoBehaviour
     private int attackHealingAmount = 3;
     private int randomdamage = 0;
 
+    public int playerdamage = 15;
+
     void Start()
     {
         //Sliderを満タンにする。
@@ -167,7 +169,7 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other){
         // 衝突したオブジェクトのタグをチェック
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("EnemyBeam"))
         {
             if(barriercount == 1){
                 Debug.Log("barrier");
@@ -188,7 +190,7 @@ public class PlayerControl : MonoBehaviour
 
     private void playerHit(Collider other){
         // ダメージは1～50の中でランダムに決める。
-        int damage = 15;
+        int damage = playerdamage;
         //Debug.Log("damage : " + damage);
 
         // 現在のHPからダメージを引く
@@ -232,5 +234,9 @@ public class PlayerControl : MonoBehaviour
     void UpdateSlider()
     {// 最大HPにおける現在のHPをSliderに反映。
         slider.value = (float)currentHp / (float)maxHp;
+    }
+
+    public void ChangePlayerDamageForNextWave(int nextdamage){
+        playerdamage = nextdamage;
     }
 }

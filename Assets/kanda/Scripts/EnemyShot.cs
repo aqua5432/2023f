@@ -8,6 +8,7 @@ public class EnemyShot : MonoBehaviour
     private int count;
  
     private GameObject target;
+    public int attacktime = 240;
 
     void Start()
     {
@@ -25,7 +26,7 @@ public class EnemyShot : MonoBehaviour
  
         // （ポイント）
         // ６０フレームごとに砲弾を発射する
-        if(count % 240 == 0)
+        if(count % attacktime == 0)
         {
             GameObject shell = Instantiate(shellPrefab, transform.position, Quaternion.identity);
             Rigidbody shellRb = shell.GetComponent<Rigidbody>();

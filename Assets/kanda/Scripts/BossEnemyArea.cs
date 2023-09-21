@@ -12,6 +12,11 @@ public class BossEnemyArea : MonoBehaviour
 
     private bool judge = true;
 
+    void Start(){
+        // ボス戦BGMを再生
+        AudioManager.instance.PlayBossBGM();
+    }
+
     void Update()
     {
         // "Enemy"タグを持つ敵オブジェクトを検索し、配列に格納

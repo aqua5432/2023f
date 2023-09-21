@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
 
     private int damagelog = 0;
 
+    public int damagescaleamount = 2;
+
     void Start(){
         isDestroyed = false;
     }
@@ -35,7 +37,7 @@ public class Enemy : MonoBehaviour
         // もし敵が一つも存在しない場合
         if (enemyBox.Length == 1)
         {
-            damagescale = 2;
+            damagescale = damagescaleamount;
         }
     }
     // 他のコライダーとの衝突を検出するメソッド

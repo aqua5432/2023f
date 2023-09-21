@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Bullet
   - SubCamera
+  - EnemyBeam
   layers:
   - Default
   - TransparentFX
