@@ -39,4 +39,22 @@ public class AudioManager : MonoBehaviour
         bgmSource.clip = normalBGM;
         bgmSource.Play();
     }
+
+    // BGMを一時停止するメソッド
+    public void PauseBGM()
+    {
+        if (bgmSource.isPlaying)
+        {
+            bgmSource.Pause();
+        }
+    }
+
+    // BGMを再開するメソッド
+    public void ResumeBGM()
+    {
+        if (!bgmSource.isPlaying)
+        {
+            bgmSource.UnPause();
+        }
+    }
 }

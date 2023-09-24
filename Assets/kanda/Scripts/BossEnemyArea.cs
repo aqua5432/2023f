@@ -12,6 +12,10 @@ public class BossEnemyArea : MonoBehaviour
 
     private bool judge = true;
 
+    public int bosstype = 0;
+
+    private bool first = true;
+
     void Start(){
         // ボス戦BGMを再生
         AudioManager.instance.PlayBossBGM();
@@ -34,6 +38,13 @@ public class BossEnemyArea : MonoBehaviour
 
             // クリアメッセージを表示
             sceneManager.ShowClear();
+        }else if(enemyBox.Length == 1 && first){
+            if(bosstype == 1){
+                VoiceManager.instance.PlayVoice(7);
+            }else{
+                VoiceManager.instance.PlayVoice(14);
+            }
+            first = false;
         }
     }
 }

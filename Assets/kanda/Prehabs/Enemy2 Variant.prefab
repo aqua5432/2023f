@@ -66,7 +66,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 57610d15c4dccf44fb07f4ef57f49fbb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57610d15c4dccf44fb07f4ef57f49fbb, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -78,9 +82,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 57610d15c4dccf44fb07f4ef57f49fbb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2056488524215263365}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 57610d15c4dccf44fb07f4ef57f49fbb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4378376954787439487}
   m_SourcePrefab: {fileID: 100100000, guid: 57610d15c4dccf44fb07f4ef57f49fbb, type: 3}
 --- !u!1 &3717135677892775946 stripped
 GameObject:
@@ -123,16 +124,5 @@ MonoBehaviour:
   explosion: {fileID: 100012, guid: 3364c97de68d3a147af572d1c71c6455, type: 3}
   damage: {fileID: 100004, guid: b46890100828db6429ff69c322b45893, type: 3}
   Life: 11
---- !u!114 &4378376954787439487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3717135677892775946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afc9684d23458e4da3c705f891605f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forwardSpeed: 20
+  EnemyList: []
+  damagescaleamount: 2

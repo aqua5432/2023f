@@ -22,6 +22,7 @@ public class BossEnemy : MonoBehaviour
         if (enemyBox.Length == 1 && judge)
         {
             enemydivide();
+            VoiceManager.instance.PlayVoice(12);
             judge = false;
         }
     }

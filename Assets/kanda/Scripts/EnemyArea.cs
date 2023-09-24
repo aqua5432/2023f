@@ -19,6 +19,8 @@ public class EnemyArea : MonoBehaviour
 
     public int nextdamage = 15;
 
+    private bool first = true;
+
     void Start()
     {
         // PlayerControlスクリプトへの参照を取得
@@ -39,6 +41,9 @@ public class EnemyArea : MonoBehaviour
             // ボス敵をアクティブにする
             BossEnemy.SetActive(true);
             BossStart = true;
+        }else if(enemyBox.Length == 1 && first){
+            VoiceManager.instance.PlayVoice(14);
+            first = false;
         }
     }
 }

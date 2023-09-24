@@ -31,6 +31,14 @@ public class PlayerControl : MonoBehaviour
 
     public int playerdamage = 15;
 
+    public PauseManager PauseManager;
+    public VoiceManager VoiceManager;
+    public HelpManager HelpManager;
+
+    public GameObject[] bodys;
+    public GameObject[] wings;
+    public GameObject[] thrusters;
+
     void Start()
     {
         //Sliderを満タンにする。
@@ -40,6 +48,10 @@ public class PlayerControl : MonoBehaviour
         //Debug.Log("Start currentHp : " + currentHp);
         reloading = false;
         attackdamage = damageAmount;
+        Debug.Log("Before PlayVoice(0)");
+        VoiceManager.PlayVoice(0);
+        Debug.Log("After PlayVoice(0)");
+        PlayerSet();
     }
 
     // Update is called once per frame
@@ -53,35 +65,34 @@ public class PlayerControl : MonoBehaviour
         */
 
         // 上矢印キーが押されたときの処理
-        if (Input.GetKey(KeyCode.UpArrow)){
+        if (Input.GetKeyDown(KeyCode.W)){
             //上方向に移動+少し傾く
-            transform.position += new Vector3(0, 0.1f, 0);
-            transform.rotation = Quaternion.Euler(-30, 0, 0);
+            transform.position += new Vector3(0, 0.1f * Time.deltaTime, 0);
+            transform.rotation = Quaternion.Euler(-30 * Time.deltaTime, 0, 0);
         }
         // 下矢印キーが押されたときの処理
-        if (Input.GetKey(KeyCode.DownArrow)){
+        if (Input.GetKeyDown(KeyCode.S)){
             //下方向に移動+少し傾く
-            transform.position += new Vector3(0, -0.1f, 0);
-            transform.rotation = Quaternion.Euler(30, 0, 0);
+            transform.position += new Vector3(0, -0.1f * Time.deltaTime, 0);
+            transform.rotation = Quaternion.Euler(30 * Time.deltaTime, 0, 0);
         }
         // 右矢印キーが押されたときの処理
-        if (Input.GetKey(KeyCode.RightArrow)){
+        if (Input.GetKeyDown(KeyCode.D)){
             //右方向に移動+少し傾く
-            transform.position += new Vector3(0.1f, 0,  0);
-            transform.rotation = Quaternion.Euler(0, 0, -30);
+            transform.position += new Vector3(0.1f * Time.deltaTime, 0,  0);
+            transform.rotation = Quaternion.Euler(0, 0, -30 * Time.deltaTime);
         }
         // 左矢印キーが押されたときの処理
-        if (Input.GetKey(KeyCode.LeftArrow)){
+        if (Input.GetKeyDown(KeyCode.A)){
             //左方向に移動+少し傾く
-            transform.position += new Vector3(-0.1f, 0, 0);
-            transform.rotation = Quaternion.Euler(0, 0, 30);
+            transform.position += new Vector3(-0.1f * Time.deltaTime, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 30 * Time.deltaTime);
         }
         // Enterキーが押されたときの処理
-        if (Input.GetKey(KeyCode.Return) && !reloading ){
+        if (Input.GetKeyDown(KeyCode.X) && !reloading ){
             //通常攻撃の実行
             Instantiate(beam.gameObject, this.transform.position, Quaternion.identity);
-            // リロード開始
-            StartCoroutine(Reload());
+            SEManager.instance.PlaySE(7);
         }
         if (Input.GetMouseButtonDown(0)&& !reloading)
         {
@@ -89,15 +100,32 @@ public class PlayerControl : MonoBehaviour
             // リロード開始
             StartCoroutine(Reload());
         }
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             if(barriercount == 0){
+                VoiceManager.instance.PlayVoice(13);
                 // ゲームオブジェクトの表示状態を切り替える
                 barrier.SetActive(true);
                 barriercount++;
+                SEManager.instance.PlaySE(11);
             }else{
                 Debug.Log(barriercount);
             }
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            // Pキーが押されたらポーズする
+            PauseManager.Pause();
+        }
+        else if (Input.GetKeyDown(KeyCode.F))
+        {
+            // Fキーが押されたら再開する
+            PauseManager.Resume();
+        }if (Input.GetKeyDown(KeyCode.H))
+        {
+            // Pキーが押されたらポーズする
+            PauseManager.Pause();
+            HelpManager.ShowNextScreen();
         }
     }
 
@@ -117,6 +145,8 @@ public class PlayerControl : MonoBehaviour
             GameObject beam = Instantiate(selectedBeamPrefab, gunTransform.position, gunTransform.rotation);
             // ビームの方向を設定
             beam.transform.LookAt(targetPosition);
+
+            SEManager.instance.PlaySE(13);
 
             // ヒットした敵にダメージを与える
             if (hit.collider.CompareTag("Enemy"))
@@ -150,6 +180,7 @@ public class PlayerControl : MonoBehaviour
             randomdamage = Random.Range(0, 100);
             if(randomdamage == 0){
                 attackdamage = 100;
+                SEManager.instance.PlaySE(5);
             }else if(randomdamage>=1 && randomdamage<=3){
                 attackdamage = 50;
             }else if(randomdamage>=4 && randomdamage<=24){
@@ -158,12 +189,14 @@ public class PlayerControl : MonoBehaviour
                 attackdamage-=5;
             }else if(randomdamage>=75){
                 attackdamage-=15;
+                SEManager.instance.PlaySE(6);
             }
         }else if(count == 3){
             // SceneManagerクラスのインスタンスを取得
             var sceneManager = Object.FindObjectOfType<SceneManager>();
             // スコアを増加（ここでは1000点加算）
             sceneManager.AddScore(100);
+            SEManager.instance.PlaySE(9);
         }return attackdamage;
     }
 
@@ -175,6 +208,7 @@ public class PlayerControl : MonoBehaviour
                 Debug.Log("barrier");
                 barrier.SetActive(false);
                 barriercount++;
+                SEManager.instance.PlaySE(12);
             }else{
                 playerHit(other);
             }
@@ -186,9 +220,11 @@ public class PlayerControl : MonoBehaviour
         currentHp += attackHealingAmount; // count = 1 のビームの回復量を適用
         currentHp = Mathf.Min(currentHp, maxHp); // 現在のHPが最大値を超えないように制限
         UpdateSlider(); // HPバーの更新
+        SEManager.instance.PlaySE(10);
     }
 
     private void playerHit(Collider other){
+        SEManager.instance.PlaySE(14);
         // ダメージは1～50の中でランダムに決める。
         int damage = playerdamage;
         //Debug.Log("damage : " + damage);
@@ -222,7 +258,6 @@ public class PlayerControl : MonoBehaviour
         // リロードのアニメーション開始 etc...
         //Debug.Log("リロード開始");
         reloading = true;
- 
         // ２秒待機
         yield return new WaitForSeconds(1);
  
@@ -233,10 +268,67 @@ public class PlayerControl : MonoBehaviour
 
     void UpdateSlider()
     {// 最大HPにおける現在のHPをSliderに反映。
-        slider.value = (float)currentHp / (float)maxHp;
+        float HP = (float)currentHp / (float)maxHp;
+        slider.value = HP;
+        if(HP < 0.7){
+            if(HP < 0.5){
+                if(HP < 0.3){
+                    if(HP < 0.1){
+                        VoiceManager.instance.PlayVoice(5);
+                    }
+                    VoiceManager.instance.PlayVoice(4);
+                }
+                VoiceManager.instance.PlayVoice(3);
+            }
+            VoiceManager.instance.PlayVoice(2);
+        }
     }
 
     public void ChangePlayerDamageForNextWave(int nextdamage){
         playerdamage = nextdamage;
+    }
+
+    void PlayerSet(){
+        int body = PlayerPrefs.GetInt("bodyFighterNumber",100);
+        int wing = PlayerPrefs.GetInt("wingFighterNumber",100);
+        int thruster = PlayerPrefs.GetInt("thrusterFighterNumber",100);
+
+        // パーツの非表示
+        foreach (GameObject bodyPart in bodys)
+        {
+            bodyPart.SetActive(false);
+        }
+
+        foreach (GameObject wingPart in wings)
+        {
+            wingPart.SetActive(false);
+        }
+
+        foreach (GameObject thrusterPart in thrusters)
+        {
+            thrusterPart.SetActive(false);
+        }
+
+        // 対応するパーツを表示
+        if (body >= 0 && body < bodys.Length)
+        {
+            bodys[body].SetActive(true);
+        }else{
+            bodys[0].SetActive(true);
+        }
+
+        if (wing >= 0 && wing < wings.Length)
+        {
+            wings[wing].SetActive(true);
+        }else{
+            wings[0].SetActive(true);
+        }
+
+        if (thruster >= 0 && thruster < thrusters.Length)
+        {
+            thrusters[thruster].SetActive(true);
+        }else{
+            thrusters[0].SetActive(true);
+        }
     }
 }

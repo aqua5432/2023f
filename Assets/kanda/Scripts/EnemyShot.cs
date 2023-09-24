@@ -19,6 +19,10 @@ public class EnemyShot : MonoBehaviour
 
     void Update()
     {
+        // ポーズ中はカウントが進まないようにする
+        if (Time.timeScale == 0){
+            return;
+        }
         // 「LookAtメソッド」の活用（ポイント）
         this.gameObject.transform.LookAt(target.transform.position);
 
@@ -30,7 +34,7 @@ public class EnemyShot : MonoBehaviour
         {
             GameObject shell = Instantiate(shellPrefab, transform.position, Quaternion.identity);
             Rigidbody shellRb = shell.GetComponent<Rigidbody>();
- 
+            SEManager.instance.PlaySE(16);
             // 弾速は自由に設定
             shellRb.AddForce(transform.forward * 1000);
  

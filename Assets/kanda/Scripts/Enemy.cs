@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public GameObject damage;
 
     public float Life = 10;
+    public int bossjudge = 1;
 
     // 敵が既に破壊されたかどうかを示すフラグ
     private bool isDestroyed;
@@ -58,15 +59,32 @@ public class Enemy : MonoBehaviour
 
                 // この敵オブジェクトを破棄
                 Destroy(this.gameObject);
+                SEManager.instance.PlaySE(2);
 
                 // SceneManagerクラスのインスタンスを取得
                 var sceneManager = Object.FindObjectOfType<SceneManager>();
 
-                // スコアを増加（ここでは1000点加算）
-                sceneManager.AddScore(1000);
+                if(bossjudge == 1){
+                    // スコアを増加（ここでは1000点加算）
+                    sceneManager.AddScore(1000);
 
-                // 一度倒されたフラグをセット
-                isDestroyed = true;
+                    // 一度倒されたフラグをセット
+                    isDestroyed = true;
+                    int number = PlayerPrefs.GetInt("Enemy");
+                    ++number;
+                    PlayerPrefs.SetInt("Enemy",number);
+                    PlayerPrefs.Save();
+                }else{
+                    // スコアを増加（ここでは1000点加算）
+                    sceneManager.AddScore(5000);
+
+                    // 一度倒されたフラグをセット
+                    isDestroyed = true;
+                    int bossnumber = PlayerPrefs.GetInt("Boss");
+                    ++bossnumber;
+                    PlayerPrefs.SetInt("Boss",bossnumber);
+                    PlayerPrefs.Save();
+                }
             }
            
         }
@@ -86,15 +104,32 @@ public class Enemy : MonoBehaviour
 
                 // この敵オブジェクトを破棄
                 Destroy(this.gameObject);
+                SEManager.instance.PlaySE(2);
 
                 // SceneManagerクラスのインスタンスを取得
                 var sceneManager = Object.FindObjectOfType<SceneManager>();
 
-                // スコアを増加（ここでは1000点加算）
-                sceneManager.AddScore(1000);
+                if(bossjudge == 1){
+                    // スコアを増加（ここでは1000点加算）
+                    sceneManager.AddScore(1000);
 
-                // 一度倒されたフラグをセット
-                isDestroyed = true;
+                    // 一度倒されたフラグをセット
+                    isDestroyed = true;
+                    int number = PlayerPrefs.GetInt("Enemy");
+                    ++number;
+                    PlayerPrefs.SetInt("Enemy",number);
+                    PlayerPrefs.Save();
+                }else{
+                    // スコアを増加（ここでは1000点加算）
+                    sceneManager.AddScore(5000);
+
+                    // 一度倒されたフラグをセット
+                    isDestroyed = true;
+                    int bossnumber = PlayerPrefs.GetInt("Boss");
+                    ++bossnumber;
+                    PlayerPrefs.SetInt("Boss",bossnumber);
+                    PlayerPrefs.Save();
+                }
             }
         }
     }

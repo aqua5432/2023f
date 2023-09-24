@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6732776706011858973}
     m_Modifications:
+    - target: {fileID: 5739411968069366186, guid: bb81f7fc73f0cbe4ba0a1d33ac88b2b7, type: 3}
+      propertyPath: shellPrefab
+      value: 
+      objectReference: {fileID: 5061196516235134288, guid: 29cd002d03d8e554889ea58f9c3dd8c4, type: 3}
     - target: {fileID: 5815668196339691329, guid: bb81f7fc73f0cbe4ba0a1d33ac88b2b7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -204,11 +208,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 100012, guid: 3364c97de68d3a147af572d1c71c6455, type: 3}
   damage: {fileID: 100004, guid: b46890100828db6429ff69c322b45893, type: 3}
-  Life: 50
+  Life: 9
   EnemyList:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 6207209411508490919}
+  damagescaleamount: 2
 --- !u!4 &6732776706011858973 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 57610d15c4dccf44fb07f4ef57f49fbb, type: 3}

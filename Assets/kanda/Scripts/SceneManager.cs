@@ -43,6 +43,14 @@ public class SceneManager : MonoBehaviour
 
         // ゲームオーバーテキストを表示する
         GameOverText.gameObject.SetActive(true);
+        int a1 = _currentScore;
+        Debug.Log(_currentScore);
+        int a2 = PlayerPrefs.GetInt("Score1");
+        if(a2<a1){
+            PlayerPrefs.DeleteKey("Score1");
+            PlayerPrefs.SetInt("Score1",a1);
+            PlayerPrefs.Save();
+        }
     }
 
     // クリアテキストを表示するメソッド
@@ -52,6 +60,14 @@ public class SceneManager : MonoBehaviour
         if (!losejudge)
         {
             ClearText.gameObject.SetActive(true);
+            int a1 = _currentScore;
+            Debug.Log(_currentScore);
+            int a2 = PlayerPrefs.GetInt("Score1");
+            if(a2<a1){
+                PlayerPrefs.DeleteKey("Score1");
+                PlayerPrefs.SetInt("Score1",a1);
+                PlayerPrefs.Save();
+            }
         }
     }
 
