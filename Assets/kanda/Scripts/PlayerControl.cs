@@ -10,9 +10,9 @@ public class PlayerControl : MonoBehaviour
     public float Speed;
     public GameObject beam;
     //最大HP。
-    int maxHp = 150;
+    private int maxHp = 60;
     //現在のHP。
-    int currentHp;
+    private int currentHp;
     //Sliderを入れる
     public Slider slider;
 
@@ -26,7 +26,6 @@ public class PlayerControl : MonoBehaviour
     public GameObject barrier;
     private int barriercount = 0;
     private int attackdamage;
-    private int attackHealingAmount = 3;
     private int randomdamage = 0;
 
     public int playerdamage = 15;
@@ -39,8 +38,28 @@ public class PlayerControl : MonoBehaviour
     public GameObject[] wings;
     public GameObject[] thrusters;
 
+    private int attack;//攻撃力
+    private int hp;//体力
+    private int speed;//スピード
+    private int critRate;//会心率
+    private int critDamage;//会心ダメージ上昇率
+    private int evasionRate;//回避率
+    private int cTDecreaseRate;//クールタイム減少率
+
     void Start()
     {
+        attack = PlayerPrefs.GetInt("attack", 0);
+        hp = PlayerPrefs.GetInt("hp", 0);
+        speed = PlayerPrefs.GetInt("speed", 0);
+        critRate = PlayerPrefs.GetInt("critRate", 0);
+        critDamage = PlayerPrefs.GetInt("critDamage", 0);
+        evasionRate = PlayerPrefs.GetInt("evasionRate", 0);
+        cTDecreaseRate = PlayerPrefs.GetInt("cTDecreaseRate", 0);
+
+        damageAmount+=attack;
+        int plus = 30*hp;
+        maxHp+=plus;
+
         //Sliderを満タンにする。
         slider.value = 1;
         //現在のHPを最大HPと同じに。
@@ -48,9 +67,7 @@ public class PlayerControl : MonoBehaviour
         //Debug.Log("Start currentHp : " + currentHp);
         reloading = false;
         attackdamage = damageAmount;
-        Debug.Log("Before PlayVoice(0)");
         VoiceManager.PlayVoice(0);
-        Debug.Log("After PlayVoice(0)");
         PlayerSet();
     }
 
@@ -126,6 +143,26 @@ public class PlayerControl : MonoBehaviour
             // Pキーが押されたらポーズする
             PauseManager.Pause();
             HelpManager.ShowNextScreen();
+        }// 数字キー1から4が押されたときにビームの種類を切り替える
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            count = 0;
+            SEManager.instance.PlaySE(17);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            count = 1;
+            SEManager.instance.PlaySE(17);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            count = 2;
+            SEManager.instance.PlaySE(17);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            count = 3;
+            SEManager.instance.PlaySE(17);
         }
     }
 
@@ -162,11 +199,6 @@ public class PlayerControl : MonoBehaviour
             }
             // 一定時間後にビームを破棄する
             Destroy(beam, 2.0f); // 2.0秒後にビームを破棄
-
-            count++;
-            if(count >= beamPrefabs.Length){
-                count = 0;
-            }
         }
     }
 
@@ -175,14 +207,14 @@ public class PlayerControl : MonoBehaviour
             attackdamage+=10;
         }else if(count ==1 ){
             attackdamage-=10;
-            PlayerHealEffect();
+            PlayerHealEffect(attackdamage);
         }else if(count == 2){
-            randomdamage = Random.Range(0, 100);
+            randomdamage = Random.Range(0, 100 - critRate);
             if(randomdamage == 0){
-                attackdamage = 100;
+                attackdamage = 100+critDamage;
                 SEManager.instance.PlaySE(5);
             }else if(randomdamage>=1 && randomdamage<=3){
-                attackdamage = 50;
+                attackdamage = 50+(critDamage/2);
             }else if(randomdamage>=4 && randomdamage<=24){
                 attackdamage+=5;
             }else if(randomdamage>=25 && randomdamage<=74){
@@ -210,14 +242,19 @@ public class PlayerControl : MonoBehaviour
                 barriercount++;
                 SEManager.instance.PlaySE(12);
             }else{
-                playerHit(other);
+                randomdamage = Random.Range(0, 100 - critRate);
+                if(randomdamage < evasionRate){
+                    SEManager.instance.PlaySE(18);
+                }else{
+                    playerHit(other);
+                }
             }
         }
     }
 
-    void PlayerHealEffect()
+    void PlayerHealEffect(int attackdamage)
     {// プレイヤーの回復
-        currentHp += attackHealingAmount; // count = 1 のビームの回復量を適用
+        currentHp += attackdamage/2; // count = 1 のビームの回復量を適用
         currentHp = Mathf.Min(currentHp, maxHp); // 現在のHPが最大値を超えないように制限
         UpdateSlider(); // HPバーの更新
         SEManager.instance.PlaySE(10);
@@ -259,7 +296,7 @@ public class PlayerControl : MonoBehaviour
         //Debug.Log("リロード開始");
         reloading = true;
         // ２秒待機
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5 - (cTDecreaseRate/2));
  
         // 弾を補充
         //Debug.Log("リロード完了");
