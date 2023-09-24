@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class score1Active : MonoBehaviour
 {
-    int a = PlayerPrefs.GetInt("Score1");
+    
     void Start ()
     {
+        int a = PlayerPrefs.GetInt("Score1");
         if (a >= 10000)
         {
             this.gameObject.SetActive(true);

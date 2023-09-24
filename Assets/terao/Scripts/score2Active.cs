@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class score2Active : MonoBehaviour
 {
-    int b = PlayerPrefs.GetInt("Score2");
+    
     void Start()
     {
+        int b = PlayerPrefs.GetInt("Score1");
         if (b >= 20000)
         {
             this.gameObject.SetActive(true);

@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class button : MonoBehaviour
 {
+    
+    
     public void Nextscene()
     {
+        
         SceneManager.LoadScene("menu");
     }
 }

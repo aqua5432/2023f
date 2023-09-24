@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class jissekikaihou1 : MonoBehaviour
 {
-    int a = PlayerPrefs.GetInt("Score1");
+    
     // Start is called before the first frame update
     void Start()
     {
+        int a = PlayerPrefs.GetInt("Score1");
         if (a>0)
         {
             this.gameObject.SetActive(false);

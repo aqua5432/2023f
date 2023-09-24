@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Enemynumber : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        int b = PlayerPrefs.GetInt("Enemy");
+        if (b >= 20)
+        {
+            this.gameObject.SetActive(true);
+        }
+        else
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 }
