@@ -16,7 +16,7 @@ public class PauseManager : MonoBehaviour
         playercanvas.SetActive(false);
 
         // BGMを停止
-        AudioManager.instance.PauseBGM();
+        MyAudioManager.instance.PauseBGM();
     }
 
     public void Resume()
@@ -27,6 +27,6 @@ public class PauseManager : MonoBehaviour
         playercanvas.SetActive(true);
 
         // BGMを再開
-        AudioManager.instance.ResumeBGM();
+        MyAudioManager.instance.ResumeBGM();
     }
 }

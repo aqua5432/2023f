@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
                 SEManager.instance.PlaySE(2);
 
                 // SceneManagerクラスのインスタンスを取得
-                var sceneManager = Object.FindObjectOfType<SceneManager>();
+                var sceneManager = Object.FindObjectOfType<MySceneManager>();
 
                 if(bossjudge == 1){
                     // スコアを増加（ここでは1000点加算）
@@ -107,7 +107,7 @@ public class Enemy : MonoBehaviour
                 SEManager.instance.PlaySE(2);
 
                 // SceneManagerクラスのインスタンスを取得
-                var sceneManager = Object.FindObjectOfType<SceneManager>();
+                var sceneManager = Object.FindObjectOfType<MySceneManager>();
 
                 if(bossjudge == 1){
                     // スコアを増加（ここでは1000点加算）

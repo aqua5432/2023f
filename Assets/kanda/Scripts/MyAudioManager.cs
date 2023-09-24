@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class MyAudioManager : MonoBehaviour
 {
-    public static AudioManager instance; // AudioManagerのインスタンスを静的に保持
+    public static MyAudioManager instance; // AudioManagerのインスタンスを静的に保持
 
     public AudioSource bgmSource; // BGM再生用のAudioSource
 

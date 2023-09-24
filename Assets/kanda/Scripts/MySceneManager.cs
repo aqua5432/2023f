@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //ゲームクリアやゲームオーバーを行います
-public class SceneManager : MonoBehaviour
+public class MySceneManager : MonoBehaviour
 {
     // ゲームオーバーテキストの表示に関連する変数
     public Text GameOverText;
