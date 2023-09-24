@@ -18,7 +18,7 @@ public class BossEnemyArea : MonoBehaviour
 
     void Start(){
         // ボス戦BGMを再生
-        AudioManager.instance.PlayBossBGM();
+        MyAudioManager.instance.PlayBossBGM();
     }
 
     void Update()
@@ -34,7 +34,7 @@ public class BossEnemyArea : MonoBehaviour
             gameObject.SetActive(false);
 
             // SceneManagerクラスのインスタンスを取得
-            var sceneManager = Object.FindObjectOfType<SceneManager>();
+            var sceneManager = Object.FindObjectOfType<MySceneManager>();
 
             // クリアメッセージを表示
             sceneManager.ShowClear();

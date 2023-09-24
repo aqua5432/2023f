@@ -193,7 +193,7 @@ public class PlayerControl : MonoBehaviour
             }
         }else if(count == 3){
             // SceneManagerクラスのインスタンスを取得
-            var sceneManager = Object.FindObjectOfType<SceneManager>();
+            var sceneManager = Object.FindObjectOfType<MySceneManager>();
             // スコアを増加（ここでは1000点加算）
             sceneManager.AddScore(100);
             SEManager.instance.PlaySE(9);
@@ -248,7 +248,7 @@ public class PlayerControl : MonoBehaviour
             //ゲームオーバー画面を出す
             Camera.main.transform.SetParent(null);
             gameObject.SetActive(false);
-            var sceneManager = Object.FindObjectOfType<SceneManager>();
+            var sceneManager = Object.FindObjectOfType<MySceneManager>();
             sceneManager.ShowGameOver();
         }
     }
