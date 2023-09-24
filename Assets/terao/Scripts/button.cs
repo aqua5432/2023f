@@ -9,7 +9,11 @@ public class button : MonoBehaviour
     
     public void Nextscene()
     {
-        
+
+        Invoke("scene", 0.5f);
+    }
+    void scene()
+    {
         SceneManager.LoadScene("menu");
     }
 }
