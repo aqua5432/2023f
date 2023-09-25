@@ -6,12 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/kodaka/Scenes/Customize.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/terao/Scenes/Achivement.unity
+    guid: ef81feab9bda3524fa60e52ef0c2273a
   - enabled: 1
-    path: Assets/kodaka/Scenes/Shop.unity
-    guid: 6ef0b3341a811c34a8401512f7970b9e
-  - enabled: 1
-    path: Assets/kodaka/Scenes/Menu.unity
-    guid: 4bd13b6d5882c5449878cf17f0e235f8
+    path: Assets/terao/Scenes/menu.unity
+    guid: 392e58ae8ed0e8148a5cf680de567e16
   m_configObjects: {}
