@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 
 public class FighterDisplayer : MonoBehaviour
 {
-    bool isRotate = false;
     public float rotateSpeed;
 
     public MouseOverChecker mouseOverChecker;
@@ -14,14 +13,12 @@ public class FighterDisplayer : MonoBehaviour
     bool canRotate;
     Vector3 prevPos;
 
-    public Toggle toggle;
 
     public void Update()
     {
-        if (isRotate)
-        {
-            transform.Rotate(new Vector3(0, rotateSpeed * Time.deltaTime, 0), Space.World);
-        }
+
+        transform.Rotate(new Vector3(0, rotateSpeed * Time.deltaTime, 0), Space.World);
+
 
         if (Input.GetMouseButtonDown(0) && mouseOverChecker.isMouseOver)
         {
@@ -40,10 +37,5 @@ public class FighterDisplayer : MonoBehaviour
         {
             canRotate = false;
         }
-    }
-
-    public void ToggleRotate()
-    {
-        isRotate = toggle.isOn;
     }
 }

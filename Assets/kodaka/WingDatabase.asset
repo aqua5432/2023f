@@ -13,24 +13,67 @@ MonoBehaviour:
   m_Name: WingDatabase
   m_EditorClassIdentifier: 
   equipmentDatabase:
-  - attack: 2
-    hp: 2
+  - attack: 5
+    hp: 1
+    speed: 7
+    critRate: 5
+    critDamage: 2
+    evasionRate: 5
+    cTDecreaseRate: 3
+    price: 500
+  - attack: 5
+    hp: 3
     speed: 2
+    critRate: 7
+    critDamage: 4
+    evasionRate: 2
+    cTDecreaseRate: 3
+    price: 500
+  - attack: 1
+    hp: 6
+    speed: 5
+    critRate: 3
+    critDamage: 3
+    evasionRate: 7
+    cTDecreaseRate: 4
+    price: 500
+  - attack: 7
+    hp: 2
+    speed: 3
+    critRate: 4
+    critDamage: 5
+    evasionRate: 3
+    cTDecreaseRate: 2
+    price: 500
+  - attack: 5
+    hp: 7
+    speed: 1
+    critRate: 3
+    critDamage: 4
+    evasionRate: 1
+    cTDecreaseRate: 6
+    price: 500
+  - attack: 6
+    hp: 4
+    speed: 4
+    critRate: 1
+    critDamage: 7
+    evasionRate: 4
+    cTDecreaseRate: 1
+    price: 500
+  - attack: 2
+    hp: 5
+    speed: 6
+    critRate: 4
+    critDamage: 1
+    evasionRate: 5
+    cTDecreaseRate: 7
+    price: 500
   - attack: 0
     hp: 0
     speed: 0
-  - attack: 0
-    hp: 0
-    speed: 0
-  - attack: 0
-    hp: 0
-    speed: 0
-  - attack: 0
-    hp: 0
-    speed: 0
-  - attack: 0
-    hp: 0
-    speed: 0
-  - attack: 0
-    hp: 0
-    speed: 0
+    critRate: 0
+    critDamage: 0
+    evasionRate: 0
+    cTDecreaseRate: 0
+    price: 0

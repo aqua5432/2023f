@@ -16,15 +16,17 @@ public class StatesManager : MonoBehaviour
     EquipmentData currentThrusterData;
     EquipmentData[] currentEquipmentData;
 
-    public int currentBodyFighterNumber;
-    public int currentWingFighterNumber;
-    public int currentThrusterFighterNumber;
+    int currentBodyFighterNumber = 0;
+    int currentWingFighterNumber = 0;
+    int currentThrusterFighterNumber = 0;
 
     int totalAttack = 0;
-    int totalDefence = 0;
     int totalHp = 0;
     int totalSpeed = 0;
     int totalCritRate = 0;
+    int totalCritDamage = 0;
+    int totalEvasion = 0;
+    int totalCTDecreaseRate = 0;
     int[] totalStates;
 
     public void Awake()
@@ -52,11 +54,14 @@ public class StatesManager : MonoBehaviour
         totalStates = new int[]
         {
             totalAttack,
-            totalDefence,
             totalHp,
             totalSpeed,
-            totalCritRate
+            totalCritRate,
+            totalCritDamage,
+            totalEvasion,
+            totalCTDecreaseRate
         };
+
     }
 
     public void SetCurrentEquipment(int partsNumber, int fighterNumber)
@@ -64,7 +69,9 @@ public class StatesManager : MonoBehaviour
         //　新しく選択されたパーツのデータをとってきて、currentEquipmentDataというリストを更新
         var newEquipmentData = equipmentDatabaseSOs[partsNumber].equipmentDatabase[fighterNumber];
         currentEquipmentData[partsNumber] = newEquipmentData;
+        EquipmentsSaver(partsNumber, fighterNumber);
         SetTotalStates();
+        TotalStatesSaver();
     }
 
     public void SetTotalStates()
@@ -88,7 +95,13 @@ public class StatesManager : MonoBehaviour
         }
     }
 
-    public int[] GetStates(int partsNumber, int fighterNumber)
+    public EquipmentData GetEquipmentdata(int partsNumber, int fighterNumber)
+    {
+        var equipmentData = equipmentDatabaseSOs[partsNumber].equipmentDatabase[fighterNumber];
+        return equipmentData;
+    }
+
+    public int[] CallGetStates(int partsNumber, int fighterNumber)
     {
         var equipmentData = equipmentDatabaseSOs[partsNumber].equipmentDatabase[fighterNumber];
         return equipmentData.GetStates();
@@ -98,6 +111,42 @@ public class StatesManager : MonoBehaviour
     {
         return totalStates;
     }
+
+    public EquipmentData[] GetCurrentEquipmentData()
+    {
+        return currentEquipmentData;
+    }
     
+    // 値を保存する
+    public void EquipmentsSaver(int partsNumber, int fighterNumber)
+    {
+        switch(partsNumber)
+        {
+            case (int)EquipmentData.Parts.body:
+                PlayerPrefs.SetInt("bodyFighterNumber", fighterNumber);
+                break;
+            case (int)EquipmentData.Parts.wing:
+                PlayerPrefs.SetInt("wingFighterNumber", fighterNumber);
+                break;
+            case (int)EquipmentData.Parts.thruster:
+                PlayerPrefs.SetInt("thrusterFighterNumber", fighterNumber);
+                break;
+        }
+
+        PlayerPrefs.Save();
+    }
+
+    public void TotalStatesSaver()
+    {
+        PlayerPrefs.SetInt("attack", totalStates[0]);
+        PlayerPrefs.SetInt("hp", totalStates[1]);
+        PlayerPrefs.SetInt("speed", totalStates[2]);
+        PlayerPrefs.SetInt("critRate", totalStates[3]);
+        PlayerPrefs.SetInt("critDamage", totalStates[4]);
+        PlayerPrefs.SetInt("evasionRate", totalStates[5]);
+        PlayerPrefs.SetInt("cTDecreaseRate", totalStates[6]);
+
+        PlayerPrefs.Save();
+    }
 }
 

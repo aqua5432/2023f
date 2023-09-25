@@ -12,19 +12,32 @@ public class EquipmentDatabaseSO : ScriptableObject
 [System.Serializable]
 public class EquipmentData
 {
-    [SerializeField] int attack;
-    [SerializeField] int deffence;
+    [SerializeField] int attack;    
     [SerializeField] int hp;
     [SerializeField] int speed;
     [SerializeField] int critRate;
+    [SerializeField] int critDamage;
+    [SerializeField] int evasionRate;
+    [SerializeField] int cTDecreaseRate;
 
-    public enum states
+    [SerializeField] int price;
+
+    public enum States
     {
         attack,
-        deffence,
         hp,
         speed,
-        critRate
+        critRate,
+        critDamage,
+        evasionRate,
+        cTDecreaseRate
+    }
+
+    public enum Parts
+    {
+        body,
+        wing,
+        thruster
     }
 
     public int[] GetStates()
@@ -32,27 +45,18 @@ public class EquipmentData
         var states = new int[]
         {
             attack,
-            deffence,
             hp,
             speed,
             critRate,
-
+            critDamage,
+            evasionRate,
+            cTDecreaseRate
         };
         return states;
     }
 
-    public int GetAttack()
+    public int GetPrice()
     {
-        return attack;
-    }
-
-    public int GetHp()
-    {
-        return hp;
-    }
-
-    public int GetSpeed()
-    {
-        return speed;
+        return price;
     }
 }
