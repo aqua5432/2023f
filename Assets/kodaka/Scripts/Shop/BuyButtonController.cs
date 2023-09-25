@@ -14,19 +14,16 @@ public class BuyButtonController : MonoBehaviour
 
     [SerializeField] List<Transform> toggles;
 
-    int possessionCoin;
     int currentPartsNumber;
     int currentFighterNumber;
 
+    int possessionCoin;
     int price;
-
-    public void Start()
-    {
-        possessionCoin = PlayerPrefs.GetInt("possessionCoin");
-    }
 
     public void DisplayPrice(int partsNumber, int fighterNumber)
     {
+
+        possessionCoin = PlayerPrefs.GetInt("possessionCoin");
         //購入済みなら１，まだ買ってなければ０
         string key = purchaseManager.partsKeyLists[partsNumber][fighterNumber];
         int wasPerchased = PlayerPrefs.GetInt(key);
@@ -48,7 +45,6 @@ public class BuyButtonController : MonoBehaviour
             possessionCoinText.text = possessionCoin.ToString();
             if(possessionCoin < price)
                 possessionCoinText.color = Color.red;
-                Debug.Log("赤色にする");
         }
     }
 
@@ -58,6 +54,7 @@ public class BuyButtonController : MonoBehaviour
         if(possessionCoin >= price)
         {
             possessionCoin -= price;
+            PlayerPrefs.GetInt("possessionCoin", possessionCoin);
             string key = purchaseManager.partsKeyLists[currentPartsNumber][currentFighterNumber];
             PlayerPrefs.SetInt(key, 1);
             DisplayPrice(currentPartsNumber, currentFighterNumber);

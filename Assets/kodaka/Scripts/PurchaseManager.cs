@@ -16,7 +16,6 @@ public class PurchaseManager : MonoBehaviour
     {
         // 所持コイン
         PlayerPrefs.SetInt("possessionCoin", 10000);
-        Debug.Log("所持金がセットされました");
 
         /*
         PlayerPrefs.SetInt("body0Purchased", 0);
