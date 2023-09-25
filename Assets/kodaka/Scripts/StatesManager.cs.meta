@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6e6b0b7858fd83f43bf45cd3363a679e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - bodyDatabaseSO: {fileID: 11400000, guid: c81cbd96c6d62c74d818e029af3010d7, type: 2}
+  - wingDatabaseSO: {fileID: 11400000, guid: e04938813901cb64c863dae07242fd7e, type: 2}
+  - thrusterDatabaseSO: {fileID: 11400000, guid: 8fc84475b98bc2549ba076ac615816e1, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
