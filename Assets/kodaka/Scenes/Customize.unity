@@ -8956,12 +8956,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5c22d51a8b67e44d9f3d3bb8ecc8076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Toggles:
-  - {fileID: 615297673}
-  - {fileID: 1666886857}
-  - {fileID: 1732438464}
+  toggles: []
   fighterNumbers: 000000000000000000000000
-  purchaseManager: {fileID: 0}
+  purchaseManager: {fileID: 552707661}
 --- !u!4 &1368286119 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: df6ef344b8ecd4642a73f345b5b10a99, type: 3}
