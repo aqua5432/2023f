@@ -7,7 +7,7 @@ public class CustomButtonScript : MonoBehaviour
 {
     public void OnClickCustomButton()
     {
-        SceneManager.LoadScene("Custom");
+        SceneManager.LoadScene("Customize");
     }
     // Start is called before the first frame update
     void Start()

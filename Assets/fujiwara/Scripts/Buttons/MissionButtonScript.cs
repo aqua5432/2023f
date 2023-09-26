@@ -7,7 +7,7 @@ public class MissionButtonScript : MonoBehaviour
 {
     public void OnClickMissionButton()
     {
-        SceneManager.LoadScene("Mission");
+        SceneManager.LoadScene("Achivement");
     }
     // Start is called before the first frame update
     void Start()

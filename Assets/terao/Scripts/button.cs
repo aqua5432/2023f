@@ -14,6 +14,6 @@ public class button : MonoBehaviour
     }
     void scene()
     {
-        SceneManager.LoadScene("menu");
+        SceneManager.LoadScene("Home");
     }
 }
