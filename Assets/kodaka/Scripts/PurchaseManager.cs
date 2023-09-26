@@ -24,6 +24,7 @@ public class PurchaseManager : MonoBehaviour
 
         
         // 購入履歴をリセットしたいときにコメントアウト外す
+        /*
         PlayerPrefs.SetInt("body1Purchased", 0);
         PlayerPrefs.SetInt("body2Purchased", 0);
         PlayerPrefs.SetInt("body3Purchased", 0);
@@ -44,7 +45,7 @@ public class PurchaseManager : MonoBehaviour
         PlayerPrefs.SetInt("thruster4Purchased", 0);
         PlayerPrefs.SetInt("thruster5Purchased", 0);
         PlayerPrefs.SetInt("thruster6Purchased", 0);
-        
+        */
 
         bodyKeyList = new List<string>
         {
