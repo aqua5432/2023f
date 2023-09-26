@@ -74,37 +74,6 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //自動で全進しています
-        /*
-        transform.position += transform.TransformDirection
-        (Vector3.forward * Speed);
-        transform.rotation = Quaternion.Euler(0, 0, 0);
-        */
-
-        // 上矢印キーが押されたときの処理
-        if (Input.GetKeyDown(KeyCode.W)){
-            //上方向に移動+少し傾く
-            transform.position += new Vector3(0, 0.1f * Time.deltaTime, 0);
-            transform.rotation = Quaternion.Euler(-30 * Time.deltaTime, 0, 0);
-        }
-        // 下矢印キーが押されたときの処理
-        if (Input.GetKeyDown(KeyCode.S)){
-            //下方向に移動+少し傾く
-            transform.position += new Vector3(0, -0.1f * Time.deltaTime, 0);
-            transform.rotation = Quaternion.Euler(30 * Time.deltaTime, 0, 0);
-        }
-        // 右矢印キーが押されたときの処理
-        if (Input.GetKeyDown(KeyCode.D)){
-            //右方向に移動+少し傾く
-            transform.position += new Vector3(0.1f * Time.deltaTime, 0,  0);
-            transform.rotation = Quaternion.Euler(0, 0, -30 * Time.deltaTime);
-        }
-        // 左矢印キーが押されたときの処理
-        if (Input.GetKeyDown(KeyCode.A)){
-            //左方向に移動+少し傾く
-            transform.position += new Vector3(-0.1f * Time.deltaTime, 0, 0);
-            transform.rotation = Quaternion.Euler(0, 0, 30 * Time.deltaTime);
-        }
         // Enterキーが押されたときの処理
         if (Input.GetKeyDown(KeyCode.X) && !reloading ){
             //通常攻撃の実行
