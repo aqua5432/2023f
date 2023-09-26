@@ -14,11 +14,16 @@ public class PurchaseManager : MonoBehaviour
     
     public void Awake()
     {
-        // 所持コイン
-        PlayerPrefs.SetInt("possessionCoin", 10000);
+        // 所持コイン　バトルシーンで受け取れるようになったら消す
+        PlayerPrefs.SetInt("possessionCoin", 1250);
 
-        /*
-        PlayerPrefs.SetInt("body0Purchased", 0);
+        // 初期カスタムを購入済みにする
+        PlayerPrefs.SetInt("body0Purchased", 1);
+        PlayerPrefs.SetInt("wing0Purchased", 1);
+        PlayerPrefs.SetInt("thruster0Purchased", 1);
+
+        
+        // 購入履歴をリセットしたいときにコメントアウト外す
         PlayerPrefs.SetInt("body1Purchased", 0);
         PlayerPrefs.SetInt("body2Purchased", 0);
         PlayerPrefs.SetInt("body3Purchased", 0);
@@ -26,7 +31,6 @@ public class PurchaseManager : MonoBehaviour
         PlayerPrefs.SetInt("body5Purchased", 0);
         PlayerPrefs.SetInt("body6Purchased", 0);
 
-        PlayerPrefs.SetInt("wing0Purchased", 0);
         PlayerPrefs.SetInt("wing1Purchased", 0);
         PlayerPrefs.SetInt("wing2Purchased", 0);
         PlayerPrefs.SetInt("wing3Purchased", 0);
@@ -34,14 +38,13 @@ public class PurchaseManager : MonoBehaviour
         PlayerPrefs.SetInt("wing5Purchased", 0);
         PlayerPrefs.SetInt("wing6Purchased", 0);
 
-        PlayerPrefs.SetInt("thruster0Purchased", 0);
         PlayerPrefs.SetInt("thruster1Purchased", 0);
         PlayerPrefs.SetInt("thruster2Purchased", 0);
         PlayerPrefs.SetInt("thruster3Purchased", 0);
         PlayerPrefs.SetInt("thruster4Purchased", 0);
         PlayerPrefs.SetInt("thruster5Purchased", 0);
         PlayerPrefs.SetInt("thruster6Purchased", 0);
-        */
+        
 
         bodyKeyList = new List<string>
         {

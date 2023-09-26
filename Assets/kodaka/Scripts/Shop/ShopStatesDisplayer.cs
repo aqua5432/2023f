@@ -16,7 +16,7 @@ public class ShopStatesDisplayer : MonoBehaviour
         for(int i = 0; i < states.Length; i++)
         {
             Image fillImage = slider[i].fillRect.GetComponent<Image>();
-            fillImage.color = Color.white;
+            fillImage.color = new Color32(225, 225, 225, 255);
             slider[i].value = states[i];
         }
     }
@@ -33,9 +33,9 @@ public class ShopStatesDisplayer : MonoBehaviour
 
             Image fillImage = slider[i].fillRect.GetComponent<Image>();
             if(diff < 0)
-                fillImage.color = Color.red;
+                fillImage.color = new Color32(255, 100, 100, 255);
             else if (diff > 0)
-                fillImage.color = Color.green;
+                fillImage.color = new Color32(100, 255, 100, 255);
         }
     }
 }

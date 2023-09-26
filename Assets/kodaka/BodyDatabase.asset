@@ -68,7 +68,7 @@ MonoBehaviour:
     critDamage: 1
     evasionRate: 5
     cTDecreaseRate: 7
-    price: 500
+    price: 1000
   - attack: 0
     hp: 0
     speed: 0

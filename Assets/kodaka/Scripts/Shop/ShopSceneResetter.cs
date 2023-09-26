@@ -10,6 +10,5 @@ public class ShopSceneResetter : MonoBehaviour
     public void Start()
     {
         toggle.isOn = true;
-        Debug.Log("シーンリセッターが呼び出された");
     }
 }

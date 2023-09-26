@@ -8,8 +8,9 @@ public class BuyButtonController : MonoBehaviour
     [SerializeField] StatesManager statesManager;
     [SerializeField] PurchaseManager purchaseManager;
 
-    [SerializeField] TextMeshProUGUI possessionCoinText;
-    [SerializeField] TextMeshProUGUI priceText;
+    [SerializeField] TextMeshProUGUI soldOutText;
+    [SerializeField] TextMeshProUGUI moneyText;
+
     [SerializeField] Button button;
 
     [SerializeField] List<Transform> toggles;
@@ -22,7 +23,6 @@ public class BuyButtonController : MonoBehaviour
 
     public void DisplayPrice(int partsNumber, int fighterNumber)
     {
-
         possessionCoin = PlayerPrefs.GetInt("possessionCoin");
         //購入済みなら１，まだ買ってなければ０
         string key = purchaseManager.partsKeyLists[partsNumber][fighterNumber];
@@ -34,27 +34,28 @@ public class BuyButtonController : MonoBehaviour
         if(wasPerchased == 1)
         {
             button.gameObject.SetActive(false);
-            possessionCoinText.text = "sold out";
-            possessionCoinText.color = Color.white;
-            priceText.text = "";
+
+            soldOutText.text = "Sold Out";
+            moneyText.text = "";
         } else 
         {
             button.gameObject.SetActive(true);
+
             price = statesManager.GetEquipmentdata(partsNumber, fighterNumber).GetPrice();
-            priceText.text = string.Format("/ {0}", price);
-            possessionCoinText.text = possessionCoin.ToString();
+            soldOutText.text = "";
+            moneyText.text = string.Format("<color=#FFFFFF>{0}</color> / {1}", possessionCoin, price);
             if(possessionCoin < price)
-                possessionCoinText.color = Color.red;
+                moneyText.text = string.Format("<color=#FF0000>{0}</color> / {1}", possessionCoin, price);
         }
     }
 
     public void PurchaseEquipment()
     {
-        //　プライス弾くぽっせっしょんこいｎ
+        //　Buyボタンが押された時の処理
         if(possessionCoin >= price)
         {
             possessionCoin -= price;
-            PlayerPrefs.GetInt("possessionCoin", possessionCoin);
+            PlayerPrefs.SetInt("possessionCoin", possessionCoin);
             string key = purchaseManager.partsKeyLists[currentPartsNumber][currentFighterNumber];
             PlayerPrefs.SetInt(key, 1);
             DisplayPrice(currentPartsNumber, currentFighterNumber);
@@ -64,7 +65,7 @@ public class BuyButtonController : MonoBehaviour
             Image[] images = toggle.GetComponentsInChildren<Image>();
 
             foreach(Image image in images)
-                image.color = new Color32(255, 255, 255, 75);
+                image.color = new Color32(100, 100, 200, 100);
 
         } else
         {

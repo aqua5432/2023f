@@ -124,12 +124,15 @@ public class StatesManager : MonoBehaviour
         {
             case (int)EquipmentData.Parts.body:
                 PlayerPrefs.SetInt("bodyFighterNumber", fighterNumber);
+                Debug.Log("ボディに" + fighterNumber);
                 break;
             case (int)EquipmentData.Parts.wing:
                 PlayerPrefs.SetInt("wingFighterNumber", fighterNumber);
+                Debug.Log("うぃんぐに" + fighterNumber);
                 break;
             case (int)EquipmentData.Parts.thruster:
                 PlayerPrefs.SetInt("thrusterFighterNumber", fighterNumber);
+                Debug.Log("スラスターに" + fighterNumber);
                 break;
         }
 

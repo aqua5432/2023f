@@ -6,27 +6,32 @@ using UnityEngine.EventSystems;
 
 public class FighterDisplayer : MonoBehaviour
 {
-    public float rotateSpeed;
+    [SerializeField] float rotateSpeed;
+    bool isRotate = true;
 
-    public MouseOverChecker mouseOverChecker;
-    public float drugRotateSpeed;
-    bool canRotate;
+    [SerializeField] MouseOverChecker mouseOverChecker;
+    [SerializeField] float drugRotateSpeed;
+    bool canDrag;
     Vector3 prevPos;
 
 
     public void Update()
     {
-
-        transform.Rotate(new Vector3(0, rotateSpeed * Time.deltaTime, 0), Space.World);
+        //　ボタン押したら勝手に回転するやつ。初期状態で回ってる
+        if(isRotate)
+        {
+            transform.Rotate(new Vector3(0, rotateSpeed * Time.deltaTime, 0), Space.World);
+        }
 
 
         if (Input.GetMouseButtonDown(0) && mouseOverChecker.isMouseOver)
         {
+            isRotate = false;
+            canDrag = true;
             prevPos = Input.mousePosition;
-            canRotate = true;
         }
 
-        if (Input.GetMouseButton(0) && canRotate)
+        if (Input.GetMouseButton(0) && canDrag)
         {
             Vector3 drugRotateAngle = -1 * drugRotateSpeed * (Input.mousePosition - prevPos);
             transform.Rotate(new Vector3(0, drugRotateAngle.x, 0), Space.World);
@@ -35,7 +40,8 @@ public class FighterDisplayer : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            canRotate = false;
+            isRotate = true;
+            canDrag = false;
         }
     }
 }

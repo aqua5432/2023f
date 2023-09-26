@@ -35,17 +35,20 @@ public class ShopToggleController : MonoBehaviour, IPointerEnterHandler, IPointe
         {
             Image[] images = toggles.GetChild(fighterNumber).GetComponentsInChildren<Image>();
             foreach(Image image in images)
-                image.color = new Color32(255, 255, 255, 75);
+                image.color = new Color32(100, 100, 200, 100);
         }
     }
 
     public void OnClickToggle()
     {
-        partsNumber = partsGroup.GetSiblingIndex();
-        fighterNumber = transform.GetSiblingIndex();
-        shopEquipmentChanger.ChangeShopEquipment(partsNumber, fighterNumber);
-        shopStatesDisplayer.DisplayStates(partsNumber, fighterNumber);
-        buyButtonController.DisplayPrice(partsNumber, fighterNumber);
+        if(toggle.isOn)
+        {
+            partsNumber = partsGroup.GetSiblingIndex();
+            fighterNumber = transform.GetSiblingIndex();
+            shopEquipmentChanger.ChangeShopEquipment(partsNumber, fighterNumber);
+            shopStatesDisplayer.DisplayStates(partsNumber, fighterNumber);
+            buyButtonController.DisplayPrice(partsNumber, fighterNumber);
+        }
         DisplayBox();
     }
 

@@ -7,19 +7,25 @@ using UnityEngine.UI;
 
 public class ToggleController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public StatesManager statesManager;
-    public EquipmentChanger equipmentChanger;
-    public TotalStatesDisplayer totalStatesDisplayer;
+    [SerializeField] StatesManager statesManager;
+    [SerializeField] EquipmentChanger equipmentChanger;
+    [SerializeField] TotalStatesDisplayer totalStatesDisplayer;
 
-    public Toggle toggle;
-    public Image image;
+    [SerializeField] Transform partsGroup;
 
-    public void OnClickToggle(int partsNumber)
+    [SerializeField] Toggle toggle;
+    [SerializeField] Image image;
+
+    public void OnClickToggle()
     {
-        int fighterNumber = transform.GetSiblingIndex();
-        statesManager.SetCurrentEquipment(partsNumber, fighterNumber);
-        equipmentChanger.ChangeEquipment(partsNumber, fighterNumber);
-        totalStatesDisplayer.DisplayTotalStates();
+        if(toggle.isOn)
+        {
+            int partsNumber = partsGroup.GetSiblingIndex();
+            int fighterNumber = transform.GetSiblingIndex();
+            statesManager.SetCurrentEquipment(partsNumber, fighterNumber);
+            equipmentChanger.ChangeEquipment(partsNumber, fighterNumber);
+            totalStatesDisplayer.DisplayTotalStates();
+        }
         DisplayBox();
     }
 
