@@ -11,6 +11,7 @@ public class BoxScript : MonoBehaviour
         get { return stagenumber; }
         set { stagenumber = value; }
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,22 +19,21 @@ public class BoxScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+
+    public void DisplayBox()
     {
         this.RBS = FindObjectOfType<RightButtonScript>();
         st = RBS.RSN;
 
-      if (st == 1)
+        int childCount = transform.childCount;
+
+        for(int i = 0; i < childCount; i++)
         {
-            transform.position = new Vector3(400, 406, 0);
-        }
-      else if (st == 2)
-        {
-            transform.position = new Vector3(680, 406, 0);
-        }
-      else
-        {
-            transform.position = new Vector3(960, 406, 0);
+            GameObject box = transform.GetChild(i).gameObject;
+            if (st == (i + 1))
+                box.SetActive(true);
+            else
+                box.SetActive(false);
         }
     }
 }

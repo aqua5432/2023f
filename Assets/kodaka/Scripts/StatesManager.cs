@@ -16,6 +16,8 @@ public class StatesManager : MonoBehaviour
     EquipmentData currentThrusterData;
     EquipmentData[] currentEquipmentData;
 
+    int[] shopEquipmentStates;
+
     int currentBodyFighterNumber = 0;
     int currentWingFighterNumber = 0;
     int currentThrusterFighterNumber = 0;
@@ -74,6 +76,12 @@ public class StatesManager : MonoBehaviour
         TotalStatesSaver();
     }
 
+    public EquipmentData GetEquipmentdata(int partsNumber, int fighterNumber)
+    {
+        var equipmentData = equipmentDatabaseSOs[partsNumber].equipmentDatabase[fighterNumber];
+        return equipmentData;
+    }
+    
     public void SetTotalStates()
     {
         // totalStatesの要素を全て０にする
@@ -94,12 +102,26 @@ public class StatesManager : MonoBehaviour
             }
         }
     }
-
-    public EquipmentData GetEquipmentdata(int partsNumber, int fighterNumber)
+    
+    public int[] GetTotalStates()
     {
-        var equipmentData = equipmentDatabaseSOs[partsNumber].equipmentDatabase[fighterNumber];
-        return equipmentData;
+        return totalStates;
     }
+
+
+    public void SetShopEquipmentStates(int partsNumber, int fighterNumber)
+    {
+        shopEquipmentStates = CallGetStates(partsNumber, fighterNumber);
+    }
+
+    public int[] GetShopEquipmentStates()
+    {
+        return shopEquipmentStates;
+    }
+
+
+    
+
 
     public int[] CallGetStates(int partsNumber, int fighterNumber)
     {
@@ -107,10 +129,6 @@ public class StatesManager : MonoBehaviour
         return equipmentData.GetStates();
     }
 
-    public int[] GetTotalStates()
-    {
-        return totalStates;
-    }
 
     public EquipmentData[] GetCurrentEquipmentData()
     {

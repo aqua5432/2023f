@@ -15,7 +15,7 @@ public class PurchaseManager : MonoBehaviour
     public void Awake()
     {
         // 所持コイン　バトルシーンで受け取れるようになったら消す
-        PlayerPrefs.SetInt("possessionCoin", 1250);
+        PlayerPrefs.SetInt("possessionCoin", 5000);
 
         // 初期カスタムを購入済みにする
         PlayerPrefs.SetInt("body0Purchased", 1);
@@ -46,7 +46,7 @@ public class PurchaseManager : MonoBehaviour
         PlayerPrefs.SetInt("thruster5Purchased", 0);
         PlayerPrefs.SetInt("thruster6Purchased", 0);
         */
-
+        
         bodyKeyList = new List<string>
         {
             "body0Purchased",

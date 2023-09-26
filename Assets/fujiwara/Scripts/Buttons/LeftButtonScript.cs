@@ -12,27 +12,15 @@ public class LeftButtonScript : MonoBehaviour
          set { Lstagenumber = value; } 
      }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void OnClickLeftButton()
     {
-
         if (LSN > 1)
         {
             LSN -= 1;
         }
         this.RBS = FindObjectOfType<RightButtonScript>();
         RBS.RSN = LSN;
+        Debug.Log("LSN" + LSN);
     }
 
 }

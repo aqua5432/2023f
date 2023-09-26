@@ -11,6 +11,7 @@ public class ShopToggleController : MonoBehaviour, IPointerEnterHandler, IPointe
     [SerializeField] ShopEquipmentChanger shopEquipmentChanger;
     [SerializeField] ShopStatesDisplayer shopStatesDisplayer;
     [SerializeField] BuyButtonController buyButtonController;
+    [SerializeField] StatesManager statesManager;
 
     [SerializeField] Transform partsGroup;
     [SerializeField] Transform toggles;
@@ -18,15 +19,18 @@ public class ShopToggleController : MonoBehaviour, IPointerEnterHandler, IPointe
     [SerializeField] Toggle toggle;
     [SerializeField] Image image;
 
+
     int partsNumber;
     int fighterNumber;
+
+    bool setShopEquipment;
 
     public void Start()
     {
         //purchasedという、購入済みかどうかを保存しているリストを参照して、購入済みであるもののtoggleのImageにアクセスしたい
-        int partsNumber = partsGroup.GetSiblingIndex();
-        int fighterNumber = this.transform.GetSiblingIndex();
-        
+        partsNumber = partsGroup.GetSiblingIndex();
+        fighterNumber = transform.GetSiblingIndex();
+
         List<string> keys = purchaseManager.partsKeyLists[partsNumber];
 
         int wasPerchased = PlayerPrefs.GetInt(keys[fighterNumber]);
@@ -46,8 +50,11 @@ public class ShopToggleController : MonoBehaviour, IPointerEnterHandler, IPointe
             partsNumber = partsGroup.GetSiblingIndex();
             fighterNumber = transform.GetSiblingIndex();
             shopEquipmentChanger.ChangeShopEquipment(partsNumber, fighterNumber);
+            statesManager.SetShopEquipmentStates(partsNumber, fighterNumber);
+            setShopEquipment = true;
             shopStatesDisplayer.DisplayStates(partsNumber, fighterNumber);
             buyButtonController.DisplayPrice(partsNumber, fighterNumber);
+            Debug.Log(partsNumber + fighterNumber);
         }
         DisplayBox();
     }
@@ -63,14 +70,21 @@ public class ShopToggleController : MonoBehaviour, IPointerEnterHandler, IPointe
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        int hoverPartsNumber = partsGroup.GetSiblingIndex();
-        int hoverFighterNumber = this.transform.GetSiblingIndex();
+        if(setShopEquipment)
+        {
+            int hoverPartsNumber = partsGroup.GetSiblingIndex();
+            int hoverFighterNumber = transform.GetSiblingIndex();
 
-        shopStatesDisplayer.DisplayStatesDiff(hoverPartsNumber, hoverFighterNumber);
+            shopStatesDisplayer.DisplayStatesDiff(hoverPartsNumber, hoverFighterNumber);
+        }
+        
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        shopStatesDisplayer.DisplayStates(partsNumber, fighterNumber);
+        if(setShopEquipment)
+        {
+            shopStatesDisplayer.DisplayStates(partsNumber, fighterNumber);
+        }
     }
 }

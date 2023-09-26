@@ -16,6 +16,15 @@ public class ToggleController : MonoBehaviour, IPointerEnterHandler, IPointerExi
     [SerializeField] Toggle toggle;
     [SerializeField] Image image;
 
+    [SerializeField] AudioClip selectionSound;
+    AudioSource audioSource;
+
+    public void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+
     public void OnClickToggle()
     {
         if(toggle.isOn)
@@ -25,10 +34,13 @@ public class ToggleController : MonoBehaviour, IPointerEnterHandler, IPointerExi
             statesManager.SetCurrentEquipment(partsNumber, fighterNumber);
             equipmentChanger.ChangeEquipment(partsNumber, fighterNumber);
             totalStatesDisplayer.DisplayTotalStates();
+            if(Time.time > 0.0001)
+                audioSource.PlayOneShot(selectionSound);
         }
         DisplayBox();
     }
 
+ 
     public void DisplayBox()
     {
         if(toggle.isOn)
@@ -40,8 +52,8 @@ public class ToggleController : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        int hoverPartsNumber = this.transform.parent.parent.parent.GetSiblingIndex();
-        int hoverFighterNumber = this.transform.GetSiblingIndex();
+        int hoverPartsNumber = partsGroup.GetSiblingIndex();
+        int hoverFighterNumber = transform.GetSiblingIndex();
         totalStatesDisplayer.DisplayStatesDiff(hoverPartsNumber, hoverFighterNumber);
     }
 

@@ -15,6 +15,9 @@ public class BuyButtonController : MonoBehaviour
 
     [SerializeField] List<Transform> toggles;
 
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip purchaseSound;
+
     int currentPartsNumber;
     int currentFighterNumber;
 
@@ -43,7 +46,7 @@ public class BuyButtonController : MonoBehaviour
 
             price = statesManager.GetEquipmentdata(partsNumber, fighterNumber).GetPrice();
             soldOutText.text = "";
-            moneyText.text = string.Format("<color=#FFFFFF>{0}</color> / {1}", possessionCoin, price);
+            moneyText.text = string.Format("<color=#000000>{0}</color> / {1}", possessionCoin, price);
             if(possessionCoin < price)
                 moneyText.text = string.Format("<color=#FF0000>{0}</color> / {1}", possessionCoin, price);
         }
@@ -54,6 +57,7 @@ public class BuyButtonController : MonoBehaviour
         //　Buyボタンが押された時の処理
         if(possessionCoin >= price)
         {
+            audioSource.PlayOneShot(purchaseSound);
             possessionCoin -= price;
             PlayerPrefs.SetInt("possessionCoin", possessionCoin);
             string key = purchaseManager.partsKeyLists[currentPartsNumber][currentFighterNumber];

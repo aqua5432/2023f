@@ -12,26 +12,14 @@ public class RightButtonScript : MonoBehaviour
         set { Rstagenumber = value; }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void OnClickRightButton()
     {
-
         if (RSN < 3)
         {
             RSN += 1;
         }
         this.LBS = FindObjectOfType<LeftButtonScript>();
         LBS.LSN = RSN;
+        Debug.Log("RSN" + RSN);
     }
 }

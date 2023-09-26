@@ -10,25 +10,28 @@ public class ShopStatesDisplayer : MonoBehaviour
 
     [SerializeField] List<Slider> slider;
 
+    int[] states;
+
     public void DisplayStates(int partsNumber, int fighterNumber)
     {
-        var states = statesManager.CallGetStates(partsNumber, fighterNumber);
+        states = statesManager.GetShopEquipmentStates();
+
         for(int i = 0; i < states.Length; i++)
         {
             Image fillImage = slider[i].fillRect.GetComponent<Image>();
             fillImage.color = new Color32(225, 225, 225, 255);
             slider[i].value = states[i];
         }
+
     }
 
-    public void DisplayStatesDiff(int partsNumber, int fighterNumber)
+    public void DisplayStatesDiff(int hoverPartsNumber, int hoverFighterNumber)
     {
-        var currentEquipmentData = statesManager.GetCurrentEquipmentData();
-        var currentEquipmentStates = currentEquipmentData[partsNumber].GetStates();
-        var mouseOverStates = statesManager.CallGetStates(partsNumber, fighterNumber);
+        int[] mouseOverStates = statesManager.CallGetStates(hoverPartsNumber, hoverFighterNumber);
+
         for(int i = 0; i < mouseOverStates.Length; i++)
         {
-            int diff = mouseOverStates[i] - currentEquipmentStates[i];
+            int diff = mouseOverStates[i] - states[i];
             slider[i].value = slider[i].value + diff;
 
             Image fillImage = slider[i].fillRect.GetComponent<Image>();
