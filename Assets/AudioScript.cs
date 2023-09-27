@@ -13,21 +13,21 @@ public class AudioScript : MonoBehaviour
     [SerializeField] Slider VoiceVolumeSlider;
 
 
-    static float bgm = -20;
+    static float bgm = 0;
     public float BGM
     {
         get { return bgm; }
         set { bgm = value; }
     }
 
-    static float se = -20;
+    static float se = 0;
     public float SE
     {
         get { return se; }
         set { se = value; }
     }
 
-    static float voice = -20;
+    static float voice = 0;
     public float Voice
     {
         get { return voice; }
