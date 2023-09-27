@@ -876,6 +876,10 @@ PrefabInstance:
       value: WingToggle (2)
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -891,6 +895,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 1046457433}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -915,6 +923,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -1301,6 +1313,10 @@ PrefabInstance:
       value: WingToggle (5)
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -1316,6 +1332,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 1046457433}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -1340,6 +1360,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -1726,6 +1750,10 @@ PrefabInstance:
       value: ThrusterToggle (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -1741,6 +1769,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 185994903}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -1765,6 +1797,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -3093,6 +3129,10 @@ PrefabInstance:
       value: ThrusterToggle (6)
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -3108,6 +3148,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 185994903}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -3132,6 +3176,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -3838,6 +3886,10 @@ PrefabInstance:
       value: ThrusterToggle
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -3853,6 +3905,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 185994903}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -3877,6 +3933,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -4396,6 +4456,10 @@ PrefabInstance:
       value: WingToggle
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -4411,6 +4475,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 1046457433}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -4435,6 +4503,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -5696,6 +5768,10 @@ PrefabInstance:
       value: ThrusterToggle (3)
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -5711,6 +5787,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 185994903}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -5735,6 +5815,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -6419,6 +6503,10 @@ PrefabInstance:
       value: WingToggle (6)
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -6434,6 +6522,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 1046457433}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -6458,6 +6550,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -6844,6 +6940,10 @@ PrefabInstance:
       value: WingToggle (4)
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -6859,6 +6959,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 1046457433}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -6883,6 +6987,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -7971,6 +8079,10 @@ PrefabInstance:
       value: ThrusterToggle (5)
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -7986,6 +8098,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 185994903}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -8010,6 +8126,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -8708,6 +8828,10 @@ PrefabInstance:
       value: BodyToggle (5)
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -8723,6 +8847,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 1143527908}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -8747,6 +8875,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -9147,6 +9279,10 @@ PrefabInstance:
       value: BodyToggle (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -9162,6 +9298,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 1143527908}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -9186,6 +9326,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -9457,6 +9601,10 @@ PrefabInstance:
       value: BodyToggle (6)
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -9472,6 +9620,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 1143527908}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -9496,6 +9648,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -9652,6 +9808,10 @@ PrefabInstance:
       value: WingToggle (3)
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -9667,6 +9827,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 1046457433}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -9691,6 +9855,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -11008,6 +11176,10 @@ PrefabInstance:
       value: ThrusterToggle (4)
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -11023,6 +11195,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 185994903}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -11047,6 +11223,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -11443,6 +11623,10 @@ PrefabInstance:
       value: ThrusterToggle (2)
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -11458,6 +11642,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 185994903}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -11482,6 +11670,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -11868,6 +12060,10 @@ PrefabInstance:
       value: WingToggle (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -11883,6 +12079,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 1046457433}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -11907,6 +12107,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -13111,6 +13315,10 @@ PrefabInstance:
       value: BodyToggle (4)
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -13126,6 +13334,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 1143527908}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -13150,6 +13362,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -13296,6 +13512,10 @@ PrefabInstance:
       value: BodyToggle (3)
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -13311,6 +13531,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 1143527908}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -13335,6 +13559,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -13684,6 +13912,10 @@ PrefabInstance:
       value: BodyToggle (2)
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -13699,6 +13931,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 1143527908}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -13723,6 +13959,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -14622,6 +14862,10 @@ PrefabInstance:
       value: BodyToggle
       objectReference: {fileID: 0}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: choice
       value: 
       objectReference: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
@@ -14637,6 +14881,10 @@ PrefabInstance:
       propertyPath: partsGroup
       value: 
       objectReference: {fileID: 1143527908}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1184333500}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -14661,6 +14909,10 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1822467823}
+    - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
