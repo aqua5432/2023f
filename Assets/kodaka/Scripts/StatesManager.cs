@@ -31,6 +31,8 @@ public class StatesManager : MonoBehaviour
     int totalCTDecreaseRate = 0;
     int[] totalStates;
 
+    public bool setShopEquipment;
+
     public void Awake()
     {
         //　最初に設定されているパーツを取ってくる
@@ -66,6 +68,8 @@ public class StatesManager : MonoBehaviour
 
     }
 
+
+    //　カスタマイズ画面で選択中のパーツのデータのせったーとげったー
     public void SetCurrentEquipment(int partsNumber, int fighterNumber)
     {
         //　新しく選択されたパーツのデータをとってきて、currentEquipmentDataというリストを更新
@@ -76,12 +80,12 @@ public class StatesManager : MonoBehaviour
         TotalStatesSaver();
     }
 
-    public EquipmentData GetEquipmentdata(int partsNumber, int fighterNumber)
+    public EquipmentData[] GetCurrentEquipmentData()
     {
-        var equipmentData = equipmentDatabaseSOs[partsNumber].equipmentDatabase[fighterNumber];
-        return equipmentData;
+        return currentEquipmentData;
     }
     
+    //　カスタマイズ画面の合計ステータスのセッターとゲッター
     public void SetTotalStates()
     {
         // totalStatesの要素を全て０にする
@@ -109,8 +113,10 @@ public class StatesManager : MonoBehaviour
     }
 
 
+    // shopで表示されてるパーツのステータスのセッターとゲッター
     public void SetShopEquipmentStates(int partsNumber, int fighterNumber)
     {
+        setShopEquipment = true;
         shopEquipmentStates = CallGetStates(partsNumber, fighterNumber);
     }
 
@@ -119,21 +125,21 @@ public class StatesManager : MonoBehaviour
         return shopEquipmentStates;
     }
 
+    //　パーツナンバーとファイターナンバーで指定した装備データを取得
+    public EquipmentData GetEquipmentdata(int partsNumber, int fighterNumber)
+    {
+        var equipmentData = equipmentDatabaseSOs[partsNumber].equipmentDatabase[fighterNumber];
+        return equipmentData;
+    }
 
-    
 
-
+    //　ステータスのみの取得　
     public int[] CallGetStates(int partsNumber, int fighterNumber)
     {
         var equipmentData = equipmentDatabaseSOs[partsNumber].equipmentDatabase[fighterNumber];
         return equipmentData.GetStates();
     }
 
-
-    public EquipmentData[] GetCurrentEquipmentData()
-    {
-        return currentEquipmentData;
-    }
     
     // 値を保存する
     public void EquipmentsSaver(int partsNumber, int fighterNumber)

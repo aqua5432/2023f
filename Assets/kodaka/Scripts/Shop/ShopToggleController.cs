@@ -19,7 +19,6 @@ public class ShopToggleController : MonoBehaviour, IPointerEnterHandler, IPointe
     [SerializeField] Toggle toggle;
     [SerializeField] Image image;
 
-
     int partsNumber;
     int fighterNumber;
 
@@ -51,10 +50,10 @@ public class ShopToggleController : MonoBehaviour, IPointerEnterHandler, IPointe
             fighterNumber = transform.GetSiblingIndex();
             shopEquipmentChanger.ChangeShopEquipment(partsNumber, fighterNumber);
             statesManager.SetShopEquipmentStates(partsNumber, fighterNumber);
-            setShopEquipment = true;
             shopStatesDisplayer.DisplayStates(partsNumber, fighterNumber);
             buyButtonController.DisplayPrice(partsNumber, fighterNumber);
-            Debug.Log(partsNumber + fighterNumber);
+            Debug.Log("partsNumber" + partsNumber);
+            Debug.Log("fighterNumber" + fighterNumber);
         }
         DisplayBox();
     }
@@ -70,8 +69,9 @@ public class ShopToggleController : MonoBehaviour, IPointerEnterHandler, IPointe
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(setShopEquipment)
+        if(statesManager.setShopEquipment)
         {
+            Debug.Log("音ポイントエンター");
             int hoverPartsNumber = partsGroup.GetSiblingIndex();
             int hoverFighterNumber = transform.GetSiblingIndex();
 
@@ -82,7 +82,7 @@ public class ShopToggleController : MonoBehaviour, IPointerEnterHandler, IPointe
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if(setShopEquipment)
+        if(statesManager.setShopEquipment)
         {
             shopStatesDisplayer.DisplayStates(partsNumber, fighterNumber);
         }

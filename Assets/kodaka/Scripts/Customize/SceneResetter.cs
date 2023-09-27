@@ -30,7 +30,7 @@ public class SceneResetter : MonoBehaviour
             Transform part = toggles[i].GetChild(fighterNumberList[i]);
             part.transform.GetComponent<Toggle>().isOn = true;
             
-            //　付け焼刃のスクリプト、説明ムズイ
+            //　F15は最初からisOnがtrueに設定されてるから、1回falseにして呼び出せるようにする。
             if(fighterNumberList[i] == 0)
                 part.transform.GetComponent<Toggle>().isOn = false;
                 part.transform.GetComponent<Toggle>().isOn = true;
