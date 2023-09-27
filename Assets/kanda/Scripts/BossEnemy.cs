@@ -11,7 +11,11 @@ public class BossEnemy : MonoBehaviour
     private GameObject[] enemyBox;
 
     public GameObject[] dividedenemy;
-    private bool judge = true;
+    private bool judge;
+
+    void Start(){
+        judge = true;
+    }
 
     void Update()
     {

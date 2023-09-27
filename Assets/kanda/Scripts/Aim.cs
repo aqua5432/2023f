@@ -9,6 +9,12 @@ public class Aim : MonoBehaviour
 
     Vector3 targetPos;
 
+    void Start(){
+        VoiceManager.instance.PlayVoice(0);
+        // ボス戦BGMを再生
+        MyAudioManager.instance.PlayNormalBGM();
+    }
+
     void Update()
     {
         transform.position = Input.mousePosition;

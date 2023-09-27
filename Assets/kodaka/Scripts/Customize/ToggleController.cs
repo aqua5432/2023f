@@ -34,7 +34,8 @@ public class ToggleController : MonoBehaviour, IPointerEnterHandler, IPointerExi
             statesManager.SetCurrentEquipment(partsNumber, fighterNumber);
             equipmentChanger.ChangeEquipment(partsNumber, fighterNumber);
             totalStatesDisplayer.DisplayTotalStates();
-            if(Time.time > 0.0001)
+            // SceneResetter から呼び出された場合のみ効果音を再生
+            if (!SceneResetter.first)
                 audioSource.PlayOneShot(selectionSound);
         }
         DisplayBox();

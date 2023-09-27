@@ -57,4 +57,9 @@ public class MyAudioManager : MonoBehaviour
             bgmSource.UnPause();
         }
     }
+    
+    public void StopBGM()
+    {
+        bgmSource.Stop();
+    }
 }

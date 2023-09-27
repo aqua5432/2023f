@@ -31,9 +31,7 @@ public class VoiceManager : MonoBehaviour
         if (voiceIndex >= 0 && voiceIndex < voices.Length)
         {
             // 指定されたボイス番号の音声を再生
-            Debug.Log("Playing voice: " + voiceIndex);
             voiceSource.PlayOneShot(voices[voiceIndex]);
-            Debug.Log("Voice played: " + voiceIndex);
         }
         else
         {

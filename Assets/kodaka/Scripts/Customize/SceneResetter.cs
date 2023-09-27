@@ -10,8 +10,11 @@ public class SceneResetter : MonoBehaviour
 
     List<int> fighterNumberList;
 
+    public static bool first = true;
+
     void Start()
     {
+        SceneResetter.first = true; // SceneResetter から呼び出されたことを示すために true に設定
         // partTogglesとfighterNumbersにそれぞれbody,wing,thrusterの順番で値やオブジェクトがアタッチされてることが前提
         // それぞれのトグルのisOnをtrueにして、ToggleControlerのOnClickToggleを呼び出す。
         fighterNumberList = new List<int>
@@ -32,6 +35,8 @@ public class SceneResetter : MonoBehaviour
                 part.transform.GetComponent<Toggle>().isOn = false;
                 part.transform.GetComponent<Toggle>().isOn = true;
         }
+
+        SceneResetter.first = false; // 設定が完了したら false に設定
 
         // Playerprefsに保存されてる、purchasedの履歴を参照して、トグルのセットアクティブを切り替える
         //　購入済みのものだけ表示するってこと

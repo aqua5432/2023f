@@ -2694,7 +2694,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mission
+  m_text: Achievement
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3819,7 +3819,6 @@ GameObject:
   - component: {fileID: 1637751948}
   - component: {fileID: 1637751947}
   - component: {fileID: 1637751950}
-  - component: {fileID: 1637751951}
   m_Layer: 5
   m_Name: BattleButton
   m_TagString: Untagged
@@ -3903,18 +3902,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1637751951}
-        m_TargetAssemblyTypeName: SEScript, Assembly-CSharp
-        m_MethodName: AudioPlay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1637751948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3965,19 +3952,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a49923a3d22d104e934cc641e949889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1637751951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637751945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e147acc879cc9a8499030dac6625eaa7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ButtonSE: {fileID: 1637751945}
 --- !u!1 &1779334127
 GameObject:
   m_ObjectHideFlags: 0
@@ -4761,7 +4735,7 @@ AudioSource:
   m_GameObject: {fileID: 823103552494317573}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -1894615959225831905, guid: 38da7741a446aee4ab4ebed66227321f, type: 2}
+  OutputAudioMixerGroup: {fileID: -7237727525731510363, guid: 544934f6869318f4a8f4f72acb61141c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8e51fa6c07b980844ab2695eb1ccf010, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

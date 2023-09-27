@@ -13,18 +13,20 @@ public class EnemyArea : MonoBehaviour
 
     public GameObject BossEnemy;
 
-    private bool BossStart = false;
+    private bool BossStart;
 
     private PlayerControl playerControl; // PlayerControlスクリプトへの参照
 
     public int nextdamage = 15;
 
-    private bool first = true;
+    private bool first;
 
     void Start()
     {
         // PlayerControlスクリプトへの参照を取得
         playerControl = FindObjectOfType<PlayerControl>();
+        BossStart = false;
+        first = true;
     }
 
     void Update()

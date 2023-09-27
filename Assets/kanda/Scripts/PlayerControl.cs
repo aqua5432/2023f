@@ -10,7 +10,7 @@ public class PlayerControl : MonoBehaviour
     public float Speed;
     public GameObject beam;
     //最大HP。
-    private int maxHp = 60;
+    private int maxHp;
     //現在のHP。
     private int currentHp;
     //Sliderを入れる
@@ -21,17 +21,16 @@ public class PlayerControl : MonoBehaviour
     public GameObject[] beamPrefabs; // ビームのプレハブ
     public Transform gunTransform; // ビームの発射位置
     public int damageAmount;
-    private int count = 0;
+    private int count;
 
     public GameObject barrier;
-    private int barriercount = 0;
+    private int barriercount;
     private int attackdamage;
-    private int randomdamage = 0;
+    private int randomdamage;
 
-    public int playerdamage = 15;
+    public int playerdamage = 10;
 
     public PauseManager PauseManager;
-    public VoiceManager VoiceManager;
     public HelpManager HelpManager;
 
     public GameObject[] bodys;
@@ -46,8 +45,15 @@ public class PlayerControl : MonoBehaviour
     private int evasionRate;//回避率
     private int cTDecreaseRate;//クールタイム減少率
 
+    private int difficulty;
+
     void Start()
     {
+        count = 0;
+        barriercount = 0;
+        randomdamage = 0;
+        maxHp = 60;
+
         attack = PlayerPrefs.GetInt("attack", 0);
         hp = PlayerPrefs.GetInt("hp", 0);
         speed = PlayerPrefs.GetInt("speed", 0);
@@ -60,14 +66,14 @@ public class PlayerControl : MonoBehaviour
         int plus = 30*hp;
         maxHp+=plus;
 
+        difficulty = (int)PlayerPrefs.GetFloat("Difficulty", 1);
         //Sliderを満タンにする。
         slider.value = 1;
         //現在のHPを最大HPと同じに。
         currentHp = maxHp;
         //Debug.Log("Start currentHp : " + currentHp);
         reloading = false;
-        attackdamage = damageAmount;
-        VoiceManager.PlayVoice(0);
+        attackdamage = damageAmount;  
         PlayerSet();
     }
 
@@ -194,8 +200,10 @@ public class PlayerControl : MonoBehaviour
             }
         }else if(count == 3){
             // SceneManagerクラスのインスタンスを取得
+            Debug.Log("SearchStart");
             var sceneManager = Object.FindObjectOfType<MySceneManager>();
             // スコアを増加（ここでは1000点加算）
+            Debug.Log("AddStart");
             sceneManager.AddScore(100);
             SEManager.instance.PlaySE(9);
         }return attackdamage;
@@ -232,7 +240,7 @@ public class PlayerControl : MonoBehaviour
     private void playerHit(Collider other){
         SEManager.instance.PlaySE(14);
         // ダメージは1～50の中でランダムに決める。
-        int damage = playerdamage;
+        int damage = playerdamage * difficulty;
         //Debug.Log("damage : " + damage);
 
         // 現在のHPからダメージを引く
@@ -251,9 +259,6 @@ public class PlayerControl : MonoBehaviour
 
         //Playerの体力が0になったとき
         if(currentHp <= 0){
-            //ゲームオーバー画面を出す
-            Camera.main.transform.SetParent(null);
-            gameObject.SetActive(false);
             var sceneManager = Object.FindObjectOfType<MySceneManager>();
             sceneManager.ShowGameOver();
         }
@@ -281,12 +286,15 @@ public class PlayerControl : MonoBehaviour
                 if(HP < 0.3){
                     if(HP < 0.1){
                         VoiceManager.instance.PlayVoice(5);
+                    }else{
+                        VoiceManager.instance.PlayVoice(4);
                     }
-                    VoiceManager.instance.PlayVoice(4);
+                }else{
+                    VoiceManager.instance.PlayVoice(3);
                 }
-                VoiceManager.instance.PlayVoice(3);
+            }else{
+                VoiceManager.instance.PlayVoice(2);
             }
-            VoiceManager.instance.PlayVoice(2);
         }
     }
 

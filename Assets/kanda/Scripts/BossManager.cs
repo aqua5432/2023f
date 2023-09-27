@@ -10,7 +10,11 @@ public class BossManager : MonoBehaviour
     // 敵オブジェクトを格納する一時的な配列
     private GameObject[] enemyBox;
 
-    private bool judge = true;
+    private bool judge;
+
+    void Start(){
+        judge = true;
+    }
 
     void Update()
     {
