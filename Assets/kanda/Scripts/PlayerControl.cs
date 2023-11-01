@@ -1,42 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;//UIを使うときに書きます。
+using UnityEngine.UI;
 
-//主人公機の処理をします
-public class PlayerControl : MonoBehaviour
+public class PlayerControl : MonoBehaviour//主人公機の処理をします
 {
-    // Start is called before the first frame update
     public float Speed;
     public GameObject beam;
-    //最大HP。
-    private int maxHp;
-    //現在のHP。
-    private int currentHp;
-    //Sliderを入れる
+    private int maxHp;//最大HP。
+    private int currentHp;//現在のHP。
     public Slider slider;
-
     bool reloading;
-
     public GameObject[] beamPrefabs; // ビームのプレハブ
     public Transform gunTransform; // ビームの発射位置
     public int damageAmount;
     private int count;
-
     public GameObject barrier;
     private int barriercount;
     private int attackdamage;
     private int randomdamage;
-
     public int playerdamage = 10;
-
     public PauseManager PauseManager;
     public HelpManager HelpManager;
-
     public GameObject[] bodys;
     public GameObject[] wings;
     public GameObject[] thrusters;
-
     private int attack;//攻撃力
     private int hp;//体力
     private int speed;//スピード
@@ -44,7 +32,6 @@ public class PlayerControl : MonoBehaviour
     private int critDamage;//会心ダメージ上昇率
     private int evasionRate;//回避率
     private int cTDecreaseRate;//クールタイム減少率
-
     private int difficulty;
 
     void Start()
@@ -53,7 +40,6 @@ public class PlayerControl : MonoBehaviour
         barriercount = 0;
         randomdamage = 0;
         maxHp = 60;
-
         attack = PlayerPrefs.GetInt("attack", 0);
         hp = PlayerPrefs.GetInt("hp", 0);
         speed = PlayerPrefs.GetInt("speed", 0);
@@ -61,42 +47,29 @@ public class PlayerControl : MonoBehaviour
         critDamage = PlayerPrefs.GetInt("critDamage", 0);
         evasionRate = PlayerPrefs.GetInt("evasionRate", 0);
         cTDecreaseRate = PlayerPrefs.GetInt("cTDecreaseRate", 0);
-
         damageAmount+=attack;
         int plus = 30*hp;
         maxHp+=plus;
-
         difficulty = (int)PlayerPrefs.GetFloat("Difficulty", 1);
-        //Sliderを満タンにする。
-        slider.value = 1;
-        //現在のHPを最大HPと同じに。
-        currentHp = maxHp;
-        //Debug.Log("Start currentHp : " + currentHp);
+        slider.value = 1;//Sliderを満タンにする。
+        currentHp = maxHp;//現在のHPを最大HPと同じに。
         reloading = false;
         attackdamage = damageAmount;  
         PlayerSet();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         // Enterキーが押されたときの処理
-        if (Input.GetKeyDown(KeyCode.X) && !reloading ){
-            //通常攻撃の実行
+        if (Input.GetKeyDown(KeyCode.X) && !reloading ){//通常攻撃の実行
             Instantiate(beam.gameObject, this.transform.position, Quaternion.identity);
             SEManager.instance.PlaySE(7);
-        }
-        if (Input.GetMouseButtonDown(0)&& !reloading)
-        {
+        }if (Input.GetMouseButtonDown(0)&& !reloading){
             ShootBeam();
-            // リロード開始
-            StartCoroutine(Reload());
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
+            StartCoroutine(Reload());// リロード開始
+        }if (Input.GetKeyDown(KeyCode.B)){
             if(barriercount == 0){
                 VoiceManager.instance.PlayVoice(13);
-                // ゲームオブジェクトの表示状態を切り替える
                 barrier.SetActive(true);
                 barriercount++;
                 SEManager.instance.PlaySE(11);
@@ -104,75 +77,46 @@ public class PlayerControl : MonoBehaviour
                 Debug.Log(barriercount);
             }
         }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            // Pキーが押されたらポーズする
+        if (Input.GetKeyDown(KeyCode.P)){// Pキーが押されたらポーズする
             PauseManager.Pause();
-        }
-        else if (Input.GetKeyDown(KeyCode.F))
-        {
-            // Fキーが押されたら再開する
-            PauseManager.Resume();
-        }if (Input.GetKeyDown(KeyCode.H))
-        {
-            // Pキーが押されたらポーズする
+        }if (Input.GetKeyDown(KeyCode.H)){// Hキーが押されたらポーズする
             PauseManager.Pause();
             HelpManager.ShowNextScreen();
-        }// 数字キー1から4が押されたときにビームの種類を切り替える
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
+        }if (Input.GetKeyDown(KeyCode.Alpha1)){// 数字キー1から4が押されたときにビームの種類を切り替える
             count = 0;
             SEManager.instance.PlaySE(17);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
+        }else if (Input.GetKeyDown(KeyCode.Alpha2)){
             count = 1;
             SEManager.instance.PlaySE(17);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
+        }else if (Input.GetKeyDown(KeyCode.Alpha3)){
             count = 2;
             SEManager.instance.PlaySE(17);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
+        }else if (Input.GetKeyDown(KeyCode.Alpha4)){
             count = 3;
             SEManager.instance.PlaySE(17);
         }
     }
 
-    void ShootBeam()
-    {
-        // マウスクリック位置をワールド座標に変換
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    void ShootBeam(){
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);// マウスクリック位置をワールド座標に変換
         RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit))
-        {
+        if (Physics.Raycast(ray, out hit)){
             Vector3 targetPosition = hit.point;
-
             GameObject selectedBeamPrefab = beamPrefabs[count];
-
             // ビームを発射する処理
             GameObject beam = Instantiate(selectedBeamPrefab, gunTransform.position, gunTransform.rotation);
             // ビームの方向を設定
             beam.transform.LookAt(targetPosition);
-
             SEManager.instance.PlaySE(13);
-
             // ヒットした敵にダメージを与える
-            if (hit.collider.CompareTag("Enemy"))
-            {
+            if (hit.collider.CompareTag("Enemy")){
                 Enemy enemy = hit.collider.GetComponent<Enemy>();
-                if (enemy != null)
-                {
+                if (enemy != null){
                     attackdamage = ShootBeamChange(count);
-                    // ビームのダメージを適用
-                    enemy.TakeDamage(attackdamage);
+                    enemy.TakeDamage(attackdamage);// ビームのダメージを適用
                     attackdamage = damageAmount;
                 }
             }
-            // 一定時間後にビームを破棄する
             Destroy(beam, 2.0f); // 2.0秒後にビームを破棄
         }
     }
@@ -199,11 +143,7 @@ public class PlayerControl : MonoBehaviour
                 SEManager.instance.PlaySE(6);
             }
         }else if(count == 3){
-            // SceneManagerクラスのインスタンスを取得
-            Debug.Log("SearchStart");
             var sceneManager = Object.FindObjectOfType<MySceneManager>();
-            // スコアを増加（ここでは1000点加算）
-            Debug.Log("AddStart");
             sceneManager.AddScore(100);
             SEManager.instance.PlaySE(9);
         }return attackdamage;
@@ -211,10 +151,8 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other){
         // 衝突したオブジェクトのタグをチェック
-        if (other.gameObject.CompareTag("EnemyBeam"))
-        {
+        if (other.gameObject.CompareTag("EnemyBeam")){
             if(barriercount == 1){
-                Debug.Log("barrier");
                 barrier.SetActive(false);
                 barriercount++;
                 SEManager.instance.PlaySE(12);
@@ -229,8 +167,7 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    void PlayerHealEffect(int attackdamage)
-    {// プレイヤーの回復
+    void PlayerHealEffect(int attackdamage){// プレイヤーの回復
         currentHp += attackdamage/2; // count = 1 のビームの回復量を適用
         currentHp = Mathf.Min(currentHp, maxHp); // 現在のHPが最大値を超えないように制限
         UpdateSlider(); // HPバーの更新
@@ -239,24 +176,12 @@ public class PlayerControl : MonoBehaviour
 
     private void playerHit(Collider other){
         SEManager.instance.PlaySE(14);
-        // ダメージは1～50の中でランダムに決める。
         int damage = playerdamage * difficulty;
-        //Debug.Log("damage : " + damage);
-
-        // 現在のHPからダメージを引く
         currentHp -= damage; // 現在のHPからダメージを引く
-
-        // 現在のHPが0未満にならないように制限
-        currentHp = Mathf.Max(currentHp, 0);
-
-        //Debug.Log("After currentHp : " + currentHp);
-
+        currentHp = Mathf.Max(currentHp, 0);// 現在のHPが0未満にならないように制限
         UpdateSlider();
-        //Debug.Log("slider.value : " + slider.value);
-
         other.gameObject.SetActive(false);
         Object.Destroy(other.gameObject); // 当たった敵は削除する
-
         //Playerの体力が0になったとき
         if(currentHp <= 0){
             var sceneManager = Object.FindObjectOfType<MySceneManager>();
@@ -264,21 +189,13 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    private IEnumerator Reload()
-    {
-        // リロードのアニメーション開始 etc...
-        //Debug.Log("リロード開始");
+    private IEnumerator Reload(){//弾の補充
         reloading = true;
-        // ２秒待機
         yield return new WaitForSeconds(5 - (cTDecreaseRate/2));
- 
-        // 弾を補充
-        //Debug.Log("リロード完了");
         reloading = false;
     }
 
-    void UpdateSlider()
-    {// 最大HPにおける現在のHPをSliderに反映。
+    void UpdateSlider(){// 最大HPにおける現在のHPをSliderに反映。
         float HP = (float)currentHp / (float)maxHp;
         slider.value = HP;
         if(HP < 0.7){
@@ -306,40 +223,28 @@ public class PlayerControl : MonoBehaviour
         int body = PlayerPrefs.GetInt("bodyFighterNumber",100);
         int wing = PlayerPrefs.GetInt("wingFighterNumber",100);
         int thruster = PlayerPrefs.GetInt("thrusterFighterNumber",100);
-
         // パーツの非表示
-        foreach (GameObject bodyPart in bodys)
-        {
+        foreach (GameObject bodyPart in bodys){
             bodyPart.SetActive(false);
-        }
-
-        foreach (GameObject wingPart in wings)
-        {
+        }foreach (GameObject wingPart in wings){
             wingPart.SetActive(false);
-        }
-
-        foreach (GameObject thrusterPart in thrusters)
-        {
+        }foreach (GameObject thrusterPart in thrusters){
             thrusterPart.SetActive(false);
         }
-
         // 対応するパーツを表示
-        if (body >= 0 && body < bodys.Length)
-        {
+        if (body >= 0 && body < bodys.Length){
             bodys[body].SetActive(true);
         }else{
             bodys[0].SetActive(true);
         }
 
-        if (wing >= 0 && wing < wings.Length)
-        {
+        if (wing >= 0 && wing < wings.Length){
             wings[wing].SetActive(true);
         }else{
             wings[0].SetActive(true);
         }
 
-        if (thruster >= 0 && thruster < thrusters.Length)
-        {
+        if (thruster >= 0 && thruster < thrusters.Length){
             thrusters[thruster].SetActive(true);
         }else{
             thrusters[0].SetActive(true);

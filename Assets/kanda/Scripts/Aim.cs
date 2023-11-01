@@ -5,38 +5,31 @@ using UnityEngine.UI;
 
 public class Aim : MonoBehaviour
 {
-    public Image aimImage;
-
-    Vector3 targetPos;
+    public Image aimImage; // 照準器のイメージ
+    Vector3 targetPos; // 照準の目標位置
 
     void Start(){
         VoiceManager.instance.PlayVoice(0);
-        // ボス戦BGMを再生
-        MyAudioManager.instance.PlayNormalBGM();
+        MyAudioManager.instance.PlayNormalBGM();// ボス戦BGMを再生
     }
 
-    void Update()
-    {
+    void Update(){
+        // マウスの位置に照準器を移動
         transform.position = Input.mousePosition;
-
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit))
-        {
+        if (Physics.Raycast(ray, out hit)){
             targetPos = hit.point;
-
-            if (hit.transform.CompareTag("Enemy"))
-            {
+            if (hit.transform.CompareTag("Enemy")){
+                // 照準器の色を赤に変更（敵をターゲットとしている場合）
                 aimImage.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
-            }
-            else
-            {
+            }else{
+                // 照準器の色をシアンに変更（敵をターゲットしていない場合）
                 aimImage.color = new Color(0f, 1.0f, 1.0f, 1.0f);
             }
-        }else
-        {
-            // 照準器の色を「水色」（色は自由に変更してください。）
+        }else{
+            // 照準器の色をシアンに変更（何もターゲットしていない場合）
             aimImage.color = new Color(0.0f, 1.0f, 1.0f, 1.0f);
         }
     }

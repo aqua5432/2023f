@@ -4,19 +4,15 @@ public class Planet : MonoBehaviour
     private Camera mainCamera;
     private float destroyZPosition = -20f; // カメラのZ座標より小さい場合に破棄
 
-    void Start()
-    {
+    void Start(){
         mainCamera = Camera.main;
     }
 
-    void Update()
-    {
+    void Update(){
         // カメラのZ座標を取得
         float cameraZPosition = mainCamera.transform.position.z;
-
         // 惑星のZ座標がカメラより小さい場合に破棄
-        if (transform.position.z < cameraZPosition + destroyZPosition)
-        {
+        if (transform.position.z < cameraZPosition + destroyZPosition){
             Destroy(gameObject);
         }
     }

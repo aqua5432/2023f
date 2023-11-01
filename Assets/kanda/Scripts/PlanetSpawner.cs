@@ -5,35 +5,28 @@ public class PlanetSpawner : MonoBehaviour
 {
     public List<GameObject> planetPrefabs;
     public float spawnInterval = 5f; // 惑星の生成間隔
-
     private float timer = 0f;
     private GameObject playerObject; // プレイヤーオブジェクトの参照
 
-    void Start()
-    {
+    void Start(){
         // プレイヤーオブジェクトのタグを使用して検索
         playerObject = GameObject.FindGameObjectWithTag("Player");
-
-        if (playerObject == null)
-        {
+        if (playerObject == null){
             Debug.LogError("Player object not found.");
         }for(int i = 0;i < 4;i++){
             SpawnPlanet();
         }
     }
 
-    void Update()
-    {
+    void Update(){
         timer += Time.deltaTime;
-        if (timer >= spawnInterval && playerObject != null)
-        {
+        if (timer >= spawnInterval && playerObject != null){
             SpawnPlanet();
             timer = 0f;
         }
     }
 
-    void SpawnPlanet()
-    {
+    void SpawnPlanet(){
         int randomIndex = Random.Range(0, planetPrefabs.Count);
         GameObject selectedPlanetPrefab = planetPrefabs[randomIndex];
 
