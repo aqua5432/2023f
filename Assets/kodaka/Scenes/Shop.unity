@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1150,7 +1150,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -1159,6 +1159,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -1186,7 +1190,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -1207,10 +1211,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 64556e66bacf2304dbdd746b8b14bca7, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1587,7 +1587,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -1596,6 +1596,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -1623,7 +1627,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -1644,10 +1648,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5feb6a5c3fb785242b2370c67ccbda92, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2024,7 +2024,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -2033,6 +2033,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -2060,7 +2064,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -2081,10 +2085,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 57a2a092f91f9a049b747db1b4ed05c1, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3588,7 +3588,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -3597,6 +3597,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -3624,7 +3628,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -3645,10 +3649,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1a95d69488ddc064daf819f7875dff2f, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4345,7 +4345,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -4354,6 +4354,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -4381,7 +4385,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -4402,10 +4406,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8b1a598f51099c441bcec36f8393db35, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4915,7 +4915,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -4924,6 +4924,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -4951,7 +4955,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -4972,10 +4976,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1432187dad5340744bd926c92a41a00d, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -6496,7 +6496,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -6505,6 +6505,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -6532,7 +6536,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -6553,10 +6557,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 23b6cc59c493ff744934c0d082037dd5, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -7364,7 +7364,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -7373,6 +7373,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -7400,7 +7404,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -7421,10 +7425,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b40d0443d9c78dc43aaaf884f121ce47, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -7801,7 +7801,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -7810,6 +7810,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -7837,7 +7841,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -7858,10 +7862,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8b70f9d7c8208424394ada56b4b440bf, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8901,6 +8901,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1184333502}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 350ad20ba33a60d478e6d4a5d4279724, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1342103648}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: LoadShop
@@ -9242,7 +9254,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -9251,6 +9263,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -9278,7 +9294,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -9299,10 +9315,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 61843a6c0b3246c4daf5393cda309bd5, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -9755,7 +9767,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -9764,6 +9776,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -9791,7 +9807,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -9808,10 +9824,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 922647c3ad625e44bb94cc7e2a18fee2, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -9906,15 +9918,43 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1184333501}
-  - component: {fileID: 1184333500}
+  - component: {fileID: 1184333502}
+  - component: {fileID: 1184333503}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &1184333500
+--- !u!4 &1184333501
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184333499}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -21.705187, y: 1.4417932, z: -10.455662}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1184333502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184333499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4fc1d71ba25df54d9a90a98ed9b84b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &1184333503
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9925,7 +9965,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7237727525731510363, guid: 544934f6869318f4a8f4f72acb61141c, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -10010,21 +10050,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!4 &1184333501
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1184333499}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.705187, y: 1.4417932, z: -10.455662}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1221395100 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
@@ -10285,7 +10310,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -10294,6 +10319,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -10321,7 +10350,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -10338,10 +10367,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 4287987cb42c4014cb2f746fe7eaaf87, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -10442,6 +10467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1342103649}
   - component: {fileID: 1342103648}
+  - component: {fileID: 1342103650}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -10461,6 +10487,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6886fbf77a86f3d4b8cfea6520c2d2e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}
 --- !u!4 &1342103649
 Transform:
   m_ObjectHideFlags: 0
@@ -10476,6 +10504,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1342103650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342103647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e25a93f23f01b40a17fe64dbcb327b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  purchaseManager: {fileID: 99807831}
+  partsToggles:
+  - {fileID: 615297672}
+  - {fileID: 1666886856}
+  - {fileID: 1732438463}
+  canPlaySound: 0
 --- !u!4 &1348621017 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b95ef77d5a23fe848905aea9df05dab3, type: 3}
@@ -10607,7 +10653,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -10616,6 +10662,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -10643,7 +10693,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -10660,10 +10710,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f8a32e57afaa3d44c9dd2276278e832a, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -11050,7 +11096,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -11059,6 +11105,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -11086,7 +11136,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -11107,10 +11157,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: eec7175bcd7136d4aaa22641028b4c22, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -12129,7 +12175,7 @@ MonoBehaviour:
   - {fileID: 615297673}
   - {fileID: 1666886857}
   - {fileID: 1732438464}
-  audioSource: {fileID: 1184333500}
+  audioSource: {fileID: 1184333503}
   purchaseSound: {fileID: 8300000, guid: d9076dd9057deb94590c475c88ffc721, type: 3}
 --- !u!1 &1666886856
 GameObject:
@@ -12588,7 +12634,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -12597,6 +12643,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -12624,7 +12674,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -12645,10 +12695,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 97a8aa0e1dee8064ba1f5f76c393c41e, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -13035,7 +13081,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -13044,6 +13090,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -13071,7 +13121,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -13092,10 +13142,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ec315a88a72c70549976f79d4702c089, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -13472,7 +13518,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -13481,6 +13527,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -13508,7 +13558,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -13529,10 +13579,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1b51171d4a824f44ab1f5849f9159980, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -14566,7 +14612,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -14575,6 +14621,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -14602,7 +14652,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -14619,10 +14669,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 9fb5b97542b1f8e47abaebb1a051888f, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -14763,7 +14809,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -14772,6 +14818,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -14799,7 +14849,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -14816,10 +14866,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: e810798c1db744e4eb64b595781621dc, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -15163,7 +15209,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -15172,6 +15218,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -15199,7 +15249,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot
@@ -15216,10 +15266,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8407684017249724114, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8ed18d56836c0854ebaae4791c73c695, type: 3}
     - target: {fileID: 8611414174126962090, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -16245,7 +16291,7 @@ PrefabInstance:
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 1184333503}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: statesManager
       value: 
@@ -16254,6 +16300,10 @@ PrefabInstance:
       propertyPath: purchaseManager
       value: 
       objectReference: {fileID: 99807831}
+    - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
+      propertyPath: shopSceneResetter
+      value: 
+      objectReference: {fileID: 1342103650}
     - target: {fileID: 2215545035882672288, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: buyButtonController
       value: 
@@ -16281,7 +16331,7 @@ PrefabInstance:
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1184333500}
+      objectReference: {fileID: 0}
     - target: {fileID: 4462615771257421904, guid: bbfa70b298111ff4692c7439551ac770, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PlayOneShot

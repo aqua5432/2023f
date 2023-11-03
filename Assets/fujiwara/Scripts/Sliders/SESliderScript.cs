@@ -5,21 +5,26 @@ using UnityEngine.UI;
 
 public class SESliderScript : MonoBehaviour
 {
+    [SerializeField] Slider seSlider;
 
-    private AudioScript audiocript;
-    [SerializeField] Slider SEVolumeSlider;
+    AudioSource audioSource;
+    [SerializeField] AudioClip audioClip;
 
-    // Start is called before the first frame update
     void Start()
     {
-        this.audiocript = FindObjectOfType<AudioScript>();
-        float SEVolume = audiocript.SE;
-        SEVolumeSlider.value = audiocript.SE;
+        // audioSourceを初期化する前にvalueを変更しているため、最初は効果音が鳴らない（ヌルチェックに引っかかって音が鳴らない）
+        float seSliderValue = PlayerPrefs.GetFloat("seSliderValue", 1);
+        seSlider.value = seSliderValue;
+        
+        audioSource = SEObjectScript.instance.GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlaySampleSound()
     {
-        
+        if(audioSource != null)
+        {
+            audioSource.clip = audioClip;
+            audioSource.Play();
+        }
     }
 }

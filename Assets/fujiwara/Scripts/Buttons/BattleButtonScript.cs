@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class BattleButtonScript : MonoBehaviour
 {
+    [SerializeField] BGMScript bGMScript;
+
     private BoxScript boxscript;
+
     public void OnClickBattleButton()
     {
         GameObject HB = GameObject.Find("HomeBGM");
         Destroy(HB);
+        
         this.boxscript = FindObjectOfType<BoxScript>();
         if(boxscript.st == 1)
         {

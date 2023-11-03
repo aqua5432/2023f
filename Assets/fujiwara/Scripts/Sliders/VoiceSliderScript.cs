@@ -5,20 +5,24 @@ using UnityEngine.UI;
 
 public class VoiceSliderScript : MonoBehaviour
 {
-    private AudioScript audioscript;
-    [SerializeField] Slider VoiceVolumeSlider;
+    [SerializeField] Slider voiceSlider;
 
-    // Start is called before the first frame update
+    [SerializeField] AudioClip audioClip;
+    [SerializeField] AudioSource audioSource;
+
     void Start()
     {
-        this.audioscript = FindObjectOfType<AudioScript>();
-        float VoiceVolume = audioscript.Voice;
-        VoiceVolumeSlider.value = audioscript.Voice;
+        float voiceSliderValue = PlayerPrefs.GetFloat("voiceSliderValue", 1);
+        voiceSlider.value = voiceSliderValue;
+        
+        audioSource.clip = audioClip;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void PlaySampleSound()
+    { 
+        if(audioSource != null)
+        {
+            audioSource.Play();
+        }
     }
 }

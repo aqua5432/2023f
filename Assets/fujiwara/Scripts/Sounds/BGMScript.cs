@@ -5,16 +5,6 @@ using UnityEngine;
 public class BGMScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        DontDestroyOnLoad(this);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public static BGMScript instance;
 
     void Awake()
@@ -33,7 +23,10 @@ public class BGMScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
     
+
+    void Start()
+    {
+        DontDestroyOnLoad(this);
+    }
 }

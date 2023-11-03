@@ -12,20 +12,18 @@ public class ShopToggleController : MonoBehaviour, IPointerEnterHandler, IPointe
     [SerializeField] ShopStatesDisplayer shopStatesDisplayer;
     [SerializeField] BuyButtonController buyButtonController;
     [SerializeField] StatesManager statesManager;
+    [SerializeField] ShopSceneResetter shopSceneResetter;
 
     [SerializeField] Transform partsGroup;
     [SerializeField] Transform toggles;
 
     [SerializeField] Toggle toggle;
-    [SerializeField] Image image;
 
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip sound;
 
     int partsNumber;
     int fighterNumber;
-
-    bool setShopEquipment;
 
     public void Start()
     {
@@ -55,27 +53,15 @@ public class ShopToggleController : MonoBehaviour, IPointerEnterHandler, IPointe
             statesManager.SetShopEquipmentStates(partsNumber, fighterNumber);
             shopStatesDisplayer.DisplayStates(partsNumber, fighterNumber);
             buyButtonController.DisplayPrice(partsNumber, fighterNumber);
-            audioSource.PlayOneShot(sound);
-            Debug.Log("partsNumber" + partsNumber);
-            Debug.Log("fighterNumber" + fighterNumber);
+            if(shopSceneResetter.canPlaySound == true)
+                audioSource.PlayOneShot(sound);
         }
-        DisplayBox();
     }
-
-    public void DisplayBox()
-    {
-        if(toggle.isOn)
-            image.gameObject.SetActive(true);
-        else
-            image.gameObject.SetActive(false);
-    }
-
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         if(statesManager.setShopEquipment)
         {
-            Debug.Log("音ポイントエンター");
             int hoverPartsNumber = partsGroup.GetSiblingIndex();
             int hoverFighterNumber = transform.GetSiblingIndex();
 

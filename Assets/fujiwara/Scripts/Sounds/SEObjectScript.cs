@@ -5,19 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class SEObjectScript : MonoBehaviour
 {
+    public static SEObjectScript instance;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        if(instance == null){
+            instance = this;
+        } else {
+            Destroy(gameObject);
+        }
+
         DontDestroyOnLoad(this);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
-
-  
 }

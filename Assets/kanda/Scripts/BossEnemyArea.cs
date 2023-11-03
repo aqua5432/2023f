@@ -49,7 +49,7 @@ public class BossEnemyArea : MonoBehaviour
     private IEnumerator Reload(){
         // リロードのアニメーション開始などの処理
         // 4秒待機
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(5.5f);
         // シーンを読み込む（ここでは"Achivement"というシーン）
         SceneManager.LoadScene("Achivement");
     }

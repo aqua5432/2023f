@@ -8,72 +8,28 @@ public class AudioScript : MonoBehaviour
 {
     [SerializeField] AudioMixer audioMixer;
 
-    [SerializeField] Slider BGMVolumeSlider;
-    [SerializeField] Slider SEVolumeSlider;
-    [SerializeField] Slider VoiceVolumeSlider;
+    public float seSliderValue;
+    public float voiceSliderValue;
 
-
-    static float bgm = 0;
-    public float BGM
+    public void SetBGM(float sliderValue)
     {
-        get { return bgm; }
-        set { bgm = value; }
-    }
-
-    static float se = 0;
-    public float SE
-    {
-        get { return se; }
-        set { se = value; }
-    }
-
-    static float voice = 0;
-    public float Voice
-    {
-        get { return voice; }
-        set { voice = value; }
-    }
-
-    public void start()
-    {
-        audioMixer.GetFloat("BGM", out float BGMVolume);
-        BGMVolumeSlider.value = BGMVolume;
-
-        audioMixer.GetFloat("SE", out float SEVolume);
-        SEVolumeSlider.value = SEVolume;
-        
-        audioMixer.GetFloat("Voice", out float VoiceVolume);
-        VoiceVolumeSlider.value = VoiceVolume;
-    }
-   
-
-    public void SetBGM(float volume)
-    {
+        PlayerPrefs.SetFloat("bgmSliderValue", sliderValue);
+        float volume = Mathf.Clamp(Mathf.Log10(sliderValue) * 20, -80, 0);
         audioMixer.SetFloat("BGM", volume);
-        bgm = volume;
     }
     
-    public void SetSE(float volume)
+    public void SetSE(float sliderValue)
     {
+        PlayerPrefs.SetFloat("seSliderValue", sliderValue);
+        float volume = Mathf.Clamp(Mathf.Log10(sliderValue) * 20, -80, 0);
         audioMixer.SetFloat("SE", volume);
-        se = volume;
+        
     }
 
-    public void SetVoice(float volume)
+    public void SetVoice(float sliderValue)
     {
+        PlayerPrefs.SetFloat("voiceSliderValue", sliderValue);
+        float volume = Mathf.Clamp(Mathf.Log10(sliderValue) * 20, -80, 0);
         audioMixer.SetFloat("Voice", volume);
-        voice = volume;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

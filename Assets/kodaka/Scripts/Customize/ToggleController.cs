@@ -14,16 +14,9 @@ public class ToggleController : MonoBehaviour, IPointerEnterHandler, IPointerExi
     [SerializeField] Transform partsGroup;
 
     [SerializeField] Toggle toggle;
-    [SerializeField] Image image;
 
     [SerializeField] AudioClip selectionSound;
-    AudioSource audioSource;
-
-    public void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
-
+    [SerializeField] AudioSource audioSource;
 
     public void OnClickToggle()
     {
@@ -38,18 +31,7 @@ public class ToggleController : MonoBehaviour, IPointerEnterHandler, IPointerExi
             if (!SceneResetter.first)
                 audioSource.PlayOneShot(selectionSound);
         }
-        DisplayBox();
     }
-
- 
-    public void DisplayBox()
-    {
-        if(toggle.isOn)
-            image.gameObject.SetActive(true);
-        else
-            image.gameObject.SetActive(false);
-    }
-
 
     public void OnPointerEnter(PointerEventData eventData)
     {
