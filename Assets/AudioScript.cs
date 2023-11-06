@@ -29,7 +29,7 @@ public class AudioScript : MonoBehaviour
     public void SetVoice(float sliderValue)
     {
         PlayerPrefs.SetFloat("voiceSliderValue", sliderValue);
-        float volume = Mathf.Clamp(Mathf.Log10(sliderValue) * 20, -80, 0);
+        float volume = Mathf.Clamp(Mathf.Log10(sliderValue) * 20 + 20, -80, 20);
         audioMixer.SetFloat("Voice", volume);
     }
 }

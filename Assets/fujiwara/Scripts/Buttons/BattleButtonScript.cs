@@ -15,11 +15,11 @@ public class BattleButtonScript : MonoBehaviour
         Destroy(HB);
         
         this.boxscript = FindObjectOfType<BoxScript>();
-        if(boxscript.st == 1)
+        if(boxscript.st == 0)
         {
             SceneManager.LoadScene("1-1");
         }
-        else if (boxscript.st == 2)
+        else if (boxscript.st == 1)
         {
             SceneManager.LoadScene("1-2");
         }
