@@ -4,22 +4,15 @@ using UnityEngine;
 
 public class RightButtonScript : MonoBehaviour
 {
-    private LeftButtonScript LBS;
-    static int Rstagenumber = 1;
-    public int RSN
-    {
-        get { return Rstagenumber; }
-        set { Rstagenumber = value; }
-    }
+    [SerializeField] BoxScript boxScript;
 
     public void OnClickRightButton()
     {
-        if (RSN < 3)
+        if(boxScript.st < 2)
         {
-            RSN += 1;
+            boxScript.st++;
         }
-        this.LBS = FindObjectOfType<LeftButtonScript>();
-        LBS.LSN = RSN;
-        Debug.Log("RSN" + RSN);
+
+        boxScript.DisplayBox();
     }
 }

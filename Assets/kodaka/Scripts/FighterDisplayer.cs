@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
+using System.Diagnostics;
 
 public class FighterDisplayer : MonoBehaviour
 {
@@ -17,7 +19,6 @@ public class FighterDisplayer : MonoBehaviour
 
     public void Update()
     {
-        //　ボタン押したら勝手に回転するやつ。初期状態で回ってる
         if(isRotate)
         {
             transform.Rotate(new Vector3(0, rotateSpeed * Time.deltaTime, 0), Space.World);
@@ -33,8 +34,30 @@ public class FighterDisplayer : MonoBehaviour
 
         if (Input.GetMouseButton(0) && canDrag)
         {
-            Vector3 drugRotateAngle = -1 * drugRotateSpeed * (Input.mousePosition - prevPos);
-            transform.Rotate(new Vector3(0, drugRotateAngle.x, 0), Space.World);
+            Vector3 drugRotateAngle = drugRotateSpeed * (Input.mousePosition - prevPos);
+
+            // 横回転
+            transform.Rotate(new Vector3(0, -1 * drugRotateAngle.x, 0), Space.World);
+            // 縦回転
+            transform.Rotate(new Vector3(drugRotateAngle.y, 0, 0));
+
+            // 縦回転角度制限
+            Vector3 eulerAngeles = transform.eulerAngles;
+            if(eulerAngeles.x > 180)
+            {
+                eulerAngeles.x -= 360;
+            }
+            eulerAngeles.x = Mathf.Clamp(eulerAngeles.x, -45, 45);
+            transform.eulerAngles = eulerAngeles;
+
+            // 早く動かすとz軸で回転しちゃうときがあるため
+            transform.eulerAngles = new Vector3(
+                transform.eulerAngles.x,
+                transform.eulerAngles.y,
+                0
+            );
+
+
             prevPos = Input.mousePosition;
         }
 

@@ -4,34 +4,35 @@ using UnityEngine;
 
 public class BoxScript : MonoBehaviour
 {
-    private RightButtonScript RBS;
-    static int stagenumber = 1;
+    [SerializeField] StageTextScript stageTextScript;
+    SEScript sEScript;
+
+    static int stagenumber = 0;
     public int st
     {
         get { return stagenumber; }
         set { stagenumber = value; }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        stagenumber = st;
+        sEScript = GetComponent<SEScript>();
     }
-
-    // Update is called once per frame
 
     public void DisplayBox()
     {
-        this.RBS = FindObjectOfType<RightButtonScript>();
-        st = RBS.RSN;
-
+        Debug.Log(st);
         int childCount = transform.childCount;
 
         for(int i = 0; i < childCount; i++)
         {
             GameObject box = transform.GetChild(i).gameObject;
-            if (st == (i + 1))
+            if (st == i)
+            {
                 box.SetActive(true);
+                stageTextScript.ChangeStageText();
+                sEScript.AudioPlay();
+            }
             else
                 box.SetActive(false);
         }

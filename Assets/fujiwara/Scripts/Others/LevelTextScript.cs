@@ -9,13 +9,6 @@ public class LevelTextScript : MonoBehaviour
     private LevelSliderScript levelsliderscript;
     public TextMeshProUGUI LevelValueText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         this.levelsliderscript = FindObjectOfType<LevelSliderScript>();
