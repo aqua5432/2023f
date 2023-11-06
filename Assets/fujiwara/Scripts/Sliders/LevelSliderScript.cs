@@ -20,7 +20,6 @@ public class LevelSliderScript : MonoBehaviour
         // 難易度をPlayerPrefsに保存
         PlayerPrefs.SetFloat("Difficulty", Mathf.Round(lv));
         PlayerPrefs.Save(); // 保存を確定
-        Debug.Log(Mathf.Round(lv));
     }
 
     // Start is called before the first frame update
@@ -30,7 +29,6 @@ public class LevelSliderScript : MonoBehaviour
         // 難易度をPlayerPrefsに保存
         PlayerPrefs.SetFloat("Difficulty", Mathf.Round(lv));
         PlayerPrefs.Save(); // 保存を確定
-        Debug.Log(Mathf.Round(lv));
     }
 
     // Update is called once per frame

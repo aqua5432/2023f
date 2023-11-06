@@ -17,11 +17,11 @@ public class BoxScript : MonoBehaviour
     void Start()
     {
         sEScript = GetComponent<SEScript>();
+        st = 0;
     }
 
     public void DisplayBox()
     {
-        Debug.Log(st);
         int childCount = transform.childCount;
 
         for(int i = 0; i < childCount; i++)
