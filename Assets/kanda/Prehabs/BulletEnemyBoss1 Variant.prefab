@@ -60,13 +60,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7274721331434695146, guid: a95481befdb7ef94fa4afd200b6c8eaf, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -5324129392229052073, guid: a95481befdb7ef94fa4afd200b6c8eaf, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2374989178cb80c429af1aec7a8b8191, type: 2}
+    - target: {fileID: -3133498875991405556, guid: a95481befdb7ef94fa4afd200b6c8eaf, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a95481befdb7ef94fa4afd200b6c8eaf, type: 3}
       propertyPath: m_Name
       value: BulletEnemyBoss1 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a95481befdb7ef94fa4afd200b6c8eaf, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a95481befdb7ef94fa4afd200b6c8eaf, type: 3}
       propertyPath: m_TagString

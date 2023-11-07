@@ -19,8 +19,7 @@ public class ShopToggleController : MonoBehaviour, IPointerEnterHandler, IPointe
 
     [SerializeField] Toggle toggle;
 
-    [SerializeField] AudioSource audioSource;
-    [SerializeField] AudioClip sound;
+    AudioManager audioManager;
 
     int partsNumber;
     int fighterNumber;
@@ -41,6 +40,8 @@ public class ShopToggleController : MonoBehaviour, IPointerEnterHandler, IPointe
             foreach(Image image in images)
                 image.color = new Color32(100, 100, 200, 100);
         }
+
+        audioManager = AudioManager.instance;
     }
 
     public void OnClickToggle()
@@ -54,7 +55,7 @@ public class ShopToggleController : MonoBehaviour, IPointerEnterHandler, IPointe
             shopStatesDisplayer.DisplayStates(partsNumber, fighterNumber);
             buyButtonController.DisplayPrice(partsNumber, fighterNumber);
             if(shopSceneResetter.canPlaySound == true)
-                audioSource.PlayOneShot(sound);
+                audioManager.PlaySE(SEData.TITLE.Selection);
         }
     }
 

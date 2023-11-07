@@ -34,7 +34,7 @@ public class EnemyShot : MonoBehaviour
         {
             GameObject shell = Instantiate(shellPrefab, transform.position, Quaternion.identity);
             Rigidbody shellRb = shell.GetComponent<Rigidbody>();
-            SEManager.instance.PlaySE(16);
+            AudioManager.instance.PlaySE((SEData.TITLE)16);
             // 弾速は自由に設定
             shellRb.AddForce(transform.forward * 1000);
  

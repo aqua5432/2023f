@@ -63,16 +63,16 @@ public class PlayerControl : MonoBehaviour//主人公機の処理をします
         // Enterキーが押されたときの処理
         if (Input.GetKeyDown(KeyCode.X) && !reloading ){//通常攻撃の実行
             Instantiate(beam.gameObject, this.transform.position, Quaternion.identity);
-            SEManager.instance.PlaySE(7);
+            AudioManager.instance.PlaySE((SEData.TITLE)7);
         }if (Input.GetMouseButtonDown(0)&& !reloading){
             ShootBeam();
             StartCoroutine(Reload());// リロード開始
         }if (Input.GetKeyDown(KeyCode.B)){
             if(barriercount == 0){
-                VoiceManager.instance.PlayVoice(13);
+                AudioManager.instance.PlayVoice((VoiceData.TITLE)13);
                 barrier.SetActive(true);
                 barriercount++;
-                SEManager.instance.PlaySE(11);
+                AudioManager.instance.PlaySE((SEData.TITLE)11);
             }else{
                 Debug.Log(barriercount);
             }
@@ -84,16 +84,16 @@ public class PlayerControl : MonoBehaviour//主人公機の処理をします
             HelpManager.ShowNextScreen();
         }if (Input.GetKeyDown(KeyCode.Alpha1)){// 数字キー1から4が押されたときにビームの種類を切り替える
             count = 0;
-            SEManager.instance.PlaySE(17);
+            AudioManager.instance.PlaySE((SEData.TITLE)17);
         }else if (Input.GetKeyDown(KeyCode.Alpha2)){
             count = 1;
-            SEManager.instance.PlaySE(17);
+            AudioManager.instance.PlaySE((SEData.TITLE)17);
         }else if (Input.GetKeyDown(KeyCode.Alpha3)){
             count = 2;
-            SEManager.instance.PlaySE(17);
+            AudioManager.instance.PlaySE((SEData.TITLE)17);
         }else if (Input.GetKeyDown(KeyCode.Alpha4)){
             count = 3;
-            SEManager.instance.PlaySE(17);
+            AudioManager.instance.PlaySE((SEData.TITLE)17);
         }
     }
 
@@ -107,7 +107,7 @@ public class PlayerControl : MonoBehaviour//主人公機の処理をします
             GameObject beam = Instantiate(selectedBeamPrefab, gunTransform.position, gunTransform.rotation);
             // ビームの方向を設定
             beam.transform.LookAt(targetPosition);
-            SEManager.instance.PlaySE(13);
+            AudioManager.instance.PlaySE((SEData.TITLE)13);
             // ヒットした敵にダメージを与える
             if (hit.collider.CompareTag("Enemy")){
                 Enemy enemy = hit.collider.GetComponent<Enemy>();
@@ -131,7 +131,7 @@ public class PlayerControl : MonoBehaviour//主人公機の処理をします
             randomdamage = Random.Range(0, 100 - critRate);
             if(randomdamage == 0){
                 attackdamage = 100+critDamage;
-                SEManager.instance.PlaySE(5);
+                AudioManager.instance.PlaySE((SEData.TITLE)5);
             }else if(randomdamage>=1 && randomdamage<=3){
                 attackdamage = 50+(critDamage/2);
             }else if(randomdamage>=4 && randomdamage<=24){
@@ -140,12 +140,12 @@ public class PlayerControl : MonoBehaviour//主人公機の処理をします
                 attackdamage-=5;
             }else if(randomdamage>=75){
                 attackdamage-=15;
-                SEManager.instance.PlaySE(6);
+                AudioManager.instance.PlaySE((SEData.TITLE)6);
             }
         }else if(count == 3){
             var sceneManager = Object.FindObjectOfType<MySceneManager>();
             sceneManager.AddScore(100);
-            SEManager.instance.PlaySE(9);
+            AudioManager.instance.PlaySE((SEData.TITLE)9);
         }return attackdamage;
     }
 
@@ -155,11 +155,11 @@ public class PlayerControl : MonoBehaviour//主人公機の処理をします
             if(barriercount == 1){
                 barrier.SetActive(false);
                 barriercount++;
-                SEManager.instance.PlaySE(12);
+                AudioManager.instance.PlaySE((SEData.TITLE)12);
             }else{
                 randomdamage = Random.Range(0, 100 - critRate);
                 if(randomdamage < evasionRate){
-                    SEManager.instance.PlaySE(18);
+                    AudioManager.instance.PlaySE((SEData.TITLE)18);
                 }else{
                     playerHit(other);
                 }
@@ -171,11 +171,11 @@ public class PlayerControl : MonoBehaviour//主人公機の処理をします
         currentHp += attackdamage/2; // count = 1 のビームの回復量を適用
         currentHp = Mathf.Min(currentHp, maxHp); // 現在のHPが最大値を超えないように制限
         UpdateSlider(); // HPバーの更新
-        SEManager.instance.PlaySE(10);
+        AudioManager.instance.PlaySE((SEData.TITLE)10);
     }
 
     private void playerHit(Collider other){
-        SEManager.instance.PlaySE(14);
+        AudioManager.instance.PlaySE((SEData.TITLE)14);
         int damage = playerdamage * difficulty;
         currentHp -= damage; // 現在のHPからダメージを引く
         currentHp = Mathf.Max(currentHp, 0);// 現在のHPが0未満にならないように制限
@@ -202,15 +202,15 @@ public class PlayerControl : MonoBehaviour//主人公機の処理をします
             if(HP < 0.5){
                 if(HP < 0.3){
                     if(HP < 0.1){
-                        VoiceManager.instance.PlayVoice(5);
+                        AudioManager.instance.PlayVoice((VoiceData.TITLE)5);
                     }else{
-                        VoiceManager.instance.PlayVoice(4);
+                        AudioManager.instance.PlayVoice((VoiceData.TITLE)4);
                     }
                 }else{
-                    VoiceManager.instance.PlayVoice(3);
+                    AudioManager.instance.PlayVoice((VoiceData.TITLE)3);
                 }
             }else{
-                VoiceManager.instance.PlayVoice(2);
+                AudioManager.instance.PlayVoice((VoiceData.TITLE)2);
             }
         }
     }

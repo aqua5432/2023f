@@ -21,7 +21,7 @@ public class BossEnemy : MonoBehaviour
         // もし敵が一つも存在しない場合かつ分割がまだ行われていない場合
         if (enemyBox.Length == 1 && judge){
             enemydivide(); // 敵の分割を実行
-            VoiceManager.instance.PlayVoice(12); // 音声を再生
+            AudioManager.instance.PlayVoice((VoiceData.TITLE)12); // 音声を再生
             judge = false; // 分割が行われたことを記録
         }
     }

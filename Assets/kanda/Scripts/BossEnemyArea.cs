@@ -20,7 +20,7 @@ public class BossEnemyArea : MonoBehaviour
     private bool firstClear;//初クリアの判定
 
     void Start(){// ボス戦BGMを再生
-        MyAudioManager.instance.PlayBossBGM();
+        AudioManager.instance.PlayBGM(BGMData.TITLE.Boss);
         firstClear = false;
         first = true;
         judge = true;
@@ -39,9 +39,9 @@ public class BossEnemyArea : MonoBehaviour
             }firstClear = true;
         } else if (enemyBox.Length == 1 && first) {
             if (bosstype == 1) {
-                VoiceManager.instance.PlayVoice(7);
+                AudioManager.instance.PlayVoice((VoiceData.TITLE)7);
             } else {
-                VoiceManager.instance.PlayVoice(14);
+                AudioManager.instance.PlayVoice((VoiceData.TITLE)14);
             }first = false;
         }
     }

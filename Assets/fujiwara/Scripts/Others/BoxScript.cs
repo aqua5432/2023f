@@ -5,7 +5,7 @@ using UnityEngine;
 public class BoxScript : MonoBehaviour
 {
     [SerializeField] StageTextScript stageTextScript;
-    SEScript sEScript;
+    AudioManager audioManager;
 
     static int stagenumber = 0;
     public int st
@@ -16,7 +16,7 @@ public class BoxScript : MonoBehaviour
 
     void Start()
     {
-        sEScript = GetComponent<SEScript>();
+        audioManager = AudioManager.instance;
         st = 0;
     }
 
@@ -31,7 +31,7 @@ public class BoxScript : MonoBehaviour
             {
                 box.SetActive(true);
                 stageTextScript.ChangeStageText();
-                sEScript.AudioPlay();
+                audioManager.PlaySE(SEData.TITLE.Selection);
             }
             else
                 box.SetActive(false);

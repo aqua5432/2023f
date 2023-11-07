@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -15,8 +16,13 @@ public class ToggleController : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     [SerializeField] Toggle toggle;
 
+    AudioManager audioManager;
     [SerializeField] AudioClip selectionSound;
-    [SerializeField] AudioSource audioSource;
+
+    void Start()
+    {
+        audioManager = AudioManager.instance;
+    }
 
     public void OnClickToggle()
     {
@@ -29,7 +35,7 @@ public class ToggleController : MonoBehaviour, IPointerEnterHandler, IPointerExi
             totalStatesDisplayer.DisplayTotalStates();
             // SceneResetter から呼び出された場合のみ効果音を再生
             if (!SceneResetter.first)
-                audioSource.PlayOneShot(selectionSound);
+                audioManager.PlaySE(SEData.TITLE.Selection);
         }
     }
 

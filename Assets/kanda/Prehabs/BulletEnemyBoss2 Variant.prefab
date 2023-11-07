@@ -69,6 +69,10 @@ PrefabInstance:
       value: BulletEnemyBoss2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2245ffc92fd5b2d448977838a9f07826, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2245ffc92fd5b2d448977838a9f07826, type: 3}
       propertyPath: m_TagString
       value: EnemyBeam
       objectReference: {fileID: 0}

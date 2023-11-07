@@ -6,23 +6,28 @@ using UnityEngine.UI;
 public class VoiceSliderScript : MonoBehaviour
 {
     [SerializeField] Slider voiceSlider;
+    [SerializeField] AudioClip sampleVoice;
 
-    [SerializeField] AudioClip audioClip;
-    [SerializeField] AudioSource audioSource;
+    AudioSource audioSource;
+    bool canPlaySound;
 
     void Start()
     {
+        canPlaySound = false;
+
         float voiceSliderValue = PlayerPrefs.GetFloat("voiceSliderValue", 1);
         voiceSlider.value = voiceSliderValue;
-        
-        audioSource.clip = audioClip;
+
+        audioSource = AudioManager.instance.voiceAudioSource;
+
+        canPlaySound = true;
     }
 
     public void PlaySampleSound()
-    { 
-        if(audioSource != null)
+    {
+        if(canPlaySound && !audioSource.isPlaying)
         {
-            audioSource.Play();
+            audioSource.PlayOneShot(sampleVoice);
         }
     }
 }

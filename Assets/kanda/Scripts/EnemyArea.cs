@@ -33,7 +33,7 @@ public class EnemyArea : MonoBehaviour
             BossEnemy.SetActive(true);
             BossStart = true;
         } else if (enemyBox.Length == 1 && first) {
-            VoiceManager.instance.PlayVoice(14);
+            AudioManager.instance.PlayVoice((VoiceData.TITLE)14);
             first = false;
         }
     }

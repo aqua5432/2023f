@@ -12,6 +12,7 @@ public class MySceneManager : MonoBehaviour
     bool losejudge;// プレイヤーが負けたかどうかを判定するフラグ
     public GameObject player; // プレイヤーオブジェクトを指定
 
+    /*
     private void Awake(){
         // 既にインスタンスが存在する場合は自身を破棄
         if (instance != null && instance != this){
@@ -24,7 +25,8 @@ public class MySceneManager : MonoBehaviour
         instance = this;
         _currentScore = 0;
         losejudge = false;
-}
+    }
+    */
 
     // ゲームオーバーテキストを表示するメソッド
     public void ShowGameOver(){
@@ -43,8 +45,8 @@ public class MySceneManager : MonoBehaviour
             PlayerPrefs.DeleteKey("Score1");
             PlayerPrefs.SetInt("Score1",a1);
             PlayerPrefs.Save();
-        }MyAudioManager.instance.StopBGM();
-        SEManager.instance.PlaySE(20);
+        }AudioManager.instance.StopBGM();
+        AudioManager.instance.PlaySE((SEData.TITLE)20);
         PlayerPrefs.SetInt("CurrentScore", 0);
         PlayerPrefs.Save();
         StartCoroutine(WaitforBGM());
@@ -68,8 +70,8 @@ public class MySceneManager : MonoBehaviour
                 PlayerPrefs.DeleteKey("Score1");
                 PlayerPrefs.SetInt("Score1",a1);
                 PlayerPrefs.Save();
-            }MyAudioManager.instance.StopBGM();
-            SEManager.instance.PlaySE(19);
+            }AudioManager.instance.StopBGM();
+            AudioManager.instance.PlaySE((SEData.TITLE)19);
             PlayerPrefs.SetInt("CurrentScore", 0);
             PlayerPrefs.Save();
         }

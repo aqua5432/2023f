@@ -9,8 +9,8 @@ public class Aim : MonoBehaviour
     Vector3 targetPos; // 照準の目標位置
 
     void Start(){
-        VoiceManager.instance.PlayVoice(0);
-        MyAudioManager.instance.PlayNormalBGM();// ボス戦BGMを再生
+        AudioManager.instance.PlayVoice(0);
+        AudioManager.instance.PlayBGM(BGMData.TITLE.Doutyuu);// ボス戦BGMを再生
     }
 
     void Update(){

@@ -14,7 +14,7 @@ public class AudioResetter : MonoBehaviour
         ResetVolume("Voice", "voiceSliderValue");
     }
 
-    void ResetVolume(string mixerGroup, string sliderValueKey)
+    public void ResetVolume(string mixerGroup, string sliderValueKey)
     {
         float sliderValue = PlayerPrefs.GetFloat(sliderValueKey, 1);
         float volume = Mathf.Clamp(Mathf.Log10(sliderValue) * 20, -80, 0);

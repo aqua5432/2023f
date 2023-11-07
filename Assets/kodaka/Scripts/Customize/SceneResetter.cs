@@ -26,7 +26,6 @@ public class SceneResetter : MonoBehaviour
         
         for(int i = 0; i < toggles.Count; i++)
         {
-            Debug.Log(fighterNumberList[i]);
             Transform part = toggles[i].GetChild(fighterNumberList[i]);
             part.transform.GetComponent<Toggle>().isOn = true;
             

@@ -15,14 +15,18 @@ public class BuyButtonController : MonoBehaviour
 
     [SerializeField] List<Transform> toggles;
 
-    [SerializeField] AudioSource audioSource;
-    [SerializeField] AudioClip purchaseSound;
+    AudioManager audioManager;
 
     int currentPartsNumber;
     int currentFighterNumber;
 
     int possessionCoin;
     int price;
+
+    void Start()
+    {
+        audioManager = AudioManager.instance;
+    }
 
     public void DisplayPrice(int partsNumber, int fighterNumber)
     {
@@ -57,7 +61,7 @@ public class BuyButtonController : MonoBehaviour
         //　Buyボタンが押された時の処理
         if(possessionCoin >= price)
         {
-            audioSource.PlayOneShot(purchaseSound);
+            audioManager.PlaySE(SEData.TITLE.Purchase);
             possessionCoin -= price;
             PlayerPrefs.SetInt("possessionCoin", possessionCoin);
             string key = purchaseManager.partsKeyLists[currentPartsNumber][currentFighterNumber];

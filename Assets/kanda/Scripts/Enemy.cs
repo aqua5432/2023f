@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
     private void DestroyEnemy(){//破壊処理
         Instantiate(explosion.gameObject, this.transform.position, Quaternion.identity);
         Destroy(this.gameObject);
-        SEManager.instance.PlaySE(2);
+        AudioManager.instance.PlaySE((SEData.TITLE)2);
         isDestroyed = true;
     }
 

@@ -6,25 +6,27 @@ using UnityEngine.UI;
 public class SESliderScript : MonoBehaviour
 {
     [SerializeField] Slider seSlider;
-
-    AudioSource audioSource;
-    [SerializeField] AudioClip audioClip;
+    float preTime;
+    bool canPlaySound;
 
     void Start()
     {
-        // audioSourceを初期化する前にvalueを変更しているため、最初は効果音が鳴らない（ヌルチェックに引っかかって音が鳴らない）
+        canPlaySound = false;
+        
         float seSliderValue = PlayerPrefs.GetFloat("seSliderValue", 1);
         seSlider.value = seSliderValue;
-        
-        audioSource = SEObjectScript.instance.GetComponent<AudioSource>();
+
+        preTime = 0;
+
+        canPlaySound = true;
     }
 
-    public void PlaySampleSound()
+    public void PlaySampleVoice()
     {
-        if(audioSource != null)
+        if(canPlaySound && (Time.time - preTime) > 0.3f)
         {
-            audioSource.clip = audioClip;
-            audioSource.Play();
+            AudioManager.instance.PlaySE(SEData.TITLE.Selection);
+            preTime = Time.time;
         }
     }
 }

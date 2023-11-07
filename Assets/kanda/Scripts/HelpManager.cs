@@ -21,7 +21,7 @@ public class HelpManager : MonoBehaviour
 
     public void ShowNextScreen(){// 次の画面を表示
         if (currentScreenIndex > -1){
-            SEManager.instance.PlaySE(15);
+            AudioManager.instance.PlaySE((SEData.TITLE)15);
         }currentScreenIndex++;
         if (currentScreenIndex < helpScreens.Length){
             ShowHelpScreen(currentScreenIndex);
@@ -30,7 +30,7 @@ public class HelpManager : MonoBehaviour
 
     public void ShowPreviousScreen(){// 前の画面を表示
         currentScreenIndex--;
-        SEManager.instance.PlaySE(15);
+        AudioManager.instance.PlaySE((SEData.TITLE)15);
         if (currentScreenIndex >= 0){
             ShowHelpScreen(currentScreenIndex);
         }
